@@ -1,0 +1,28 @@
+class Solution {
+    public int solution(int[] A) {
+        int count = 0;
+        boolean flag = false;
+        int startIndex = 0;
+        // write your code in Java SE 8
+        for(int x =0; x < A.length; x++){
+            if(A[x] == 0 && !flag){
+                flag = true;
+                startIndex = x;
+            }
+            if(flag && A[x] == 1){
+                count++;
+            }
+        }
+        
+        int counter = 0;
+        int currCount = count;
+        for(int i = startIndex + 1; i< A.length; i++){
+            if(A[i] == 1){
+                currCount--;
+            }else{
+                count = count + currCount;
+            }
+        }
+    return count> 1000000000?-1:count;    
+    }
+}
