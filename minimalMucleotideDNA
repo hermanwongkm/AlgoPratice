@@ -1,0 +1,49 @@
+// you can also use imports, for example:
+// import java.util.*;
+
+// you can write to stdout for debugging purposes, e.g.
+// System.out.println("this is a debug message");
+
+class Solution {
+    public int[] solution(String S, int[] P, int[] Q) {
+        int[][] prefixSumArray = new int[3][S.length()+1];
+        for(int i = 0; i < S.length(); i++){
+            int a = 0;int c =0;int g = 0;
+            if(S.charAt(i) == 'A'){
+                a++;
+            }
+            if(S.charAt(i) == 'C'){
+                c = 1;
+            }
+            if(S.charAt(i) == 'G'){
+                g++;
+            }
+            prefixSumArray[0][i+1] = a +prefixSumArray[0][i] ;
+            prefixSumArray[1][i+1] = c+prefixSumArray[1][i];
+            prefixSumArray[2][i+1] = g+prefixSumArray[2][i];
+        }
+        int[] answer = new int[P.length];
+        int count = 0;
+        for(int i = 0; i < P.length; i++){
+            int startIndex = P[i];
+            int endIndex = Q[i]+1;
+            
+            if(prefixSumArray[0][endIndex] - prefixSumArray[0][startIndex] > 0){
+                answer[i] = 1;
+            }
+            // System.out.println(prefixSumArray[1][endIndex]);
+            // System.out.println(prefixSumArray[1][startIndex]);
+            // System.out.println("--");
+            else if(prefixSumArray[1][endIndex] - prefixSumArray[1][startIndex] > 0){
+                answer[i] = 2;
+            }
+            else if(prefixSumArray[2][endIndex] - prefixSumArray[2][startIndex] > 0){
+                answer[i] = 3;
+            }
+            else{
+                answer[i] = 4;
+            }
+        }
+        return answer;
+    }
+}
