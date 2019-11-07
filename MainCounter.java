@@ -60,20 +60,23 @@ class Solution {
         int y = 0;
         for (int x : A) {
             if (x == N + 1) {
+                //Hold the max in currMax but do not update everything.
+                //Only update when necessary.
                 currMax = max;
             }
 
             else {
-                if (counter[x - 1] < currMax) {
+                if (counter[x - 1] < currMax) { //Update when we are doing something with that index.
                     y = currMax + 1;
-                } else {
-                    y = counter[x - 1] + 1;
+                } else { //Normal increment 
+                    y = counter[x - 1] + 1; 
                 }
                 counter[x - 1] = y;
-                max = counter[x - 1] > max ? counter[x - 1] : max;
+                max = counter[x - 1] > max ? counter[x - 1] : max; //This holds the maximum value currently in array, and only update everything to this when it is N+1.
 
             }
         }
+        //Setting all values to the max if it is lower than the supposed maxValue.
         for (int i = 0; i < counter.length; i++) {
             if (counter[i] < currMax) {
                 counter[i] = currMax;
