@@ -1,0 +1,41 @@
+The idea of this is that the maximum slice can only be either 2 or 3. Because if it is 4. it can be always reduced to 2 or 3.
+
+// you can also use imports, for example:
+// import java.util.*;
+
+// you can write to stdout for debugging purposes, e.g.
+// System.out.println("this is a debug message");
+
+class Solution {
+    public int solution(int[] A) {
+        // write your code in Java SE 8
+        double minAverage = Integer.MAX_VALUE;
+        int minIndex = 0;
+        for(int i = 0; i < A.length-2; i++){
+            double total = A[i] + A[i+1];
+            double avg = total/2.0;
+            if(avg < minAverage){
+                minAverage = avg;
+                minIndex = i;
+            }
+            
+            //Since you are doing a i+2 here, your max length to loop is -2
+             total = A[i] + A[i+1] + A[i+2];
+             avg = total/3.0;
+            if(avg < minAverage){
+                minAverage = avg;
+                minIndex = i;
+            }
+        }
+        //The previous i+1 i+2 will cover the last 3 index
+        //Therefore now, you just need to calculate the last 2 index
+        double total = A[A.length-1] + A[A.length-2];
+        double avg = total/2.0;
+        if(avg < minAverage){
+            minAverage = avg;
+            minIndex = A.length-2;
+            }
+    return minIndex;
+        
+    }
+}
