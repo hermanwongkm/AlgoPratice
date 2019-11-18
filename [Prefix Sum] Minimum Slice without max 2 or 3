@@ -40,24 +40,16 @@ N is an integer within the range [2..100,000];
 each element of array A is an integer within the range [−10,000..10,000].
 **/
 
-// you can also use imports, for example:
-// import java.util.*;
-
-// you can write to stdout for debugging purposes, e.g.
-// System.out.println("this is a debug message");
-
 class Solution {
  static public int solution(int[] A) {
-    // write your code in Java SE 8
     float avg = 0f;
     int min_index = 0;
     int P = 0;
-    //formula
 
-    float sums[] = new float[A.length ];
+    float sums[] = new float[A.length];
 
     sums[0] = A[0];
-    //sufffix sums
+    //Calculate prefix sum
     int prefix = 0;
     for (int i = 1; i < A.length; i += 1) {
         sums[i] = sums[i-1]+A[i];
@@ -67,13 +59,13 @@ class Solution {
     
     for (int i = 1; i < A.length; i++) {
         avg = (sums[i] - sums[P] + A[P]) / (i - P + 1);
-        if (avg < min_avg) { //2.6
-            min_avg = avg; //3, 2.6
-            min_index = P; //0, 1
+        if (avg < min_avg) { 
+            min_avg = avg; 
+            min_index = P; 
         }
         //If i add another value, and its lower i will have 2 new lower values
         if (A[i] < min_avg) {
-            P = i; //p = 1,2
+            P = i; 
         }
     }
     return min_index;
