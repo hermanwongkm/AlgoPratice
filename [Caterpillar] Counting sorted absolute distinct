@@ -37,11 +37,11 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] A) {
-        int count = 1;
+        int count = 1; //Count the initiate count as it will just go through the first if else.
         int left = 0 ;
         int right = A.length -1;
         int currMax = Math.max(Math.abs(A[left]),Math.abs(A[right]));
-        if(A[left] == Integer.MIN_VALUE){
+        if(A[left] == Integer.MIN_VALUE){ //If it is -214...68. You will loop until it is not that number
             currMax = A[left];
             while(left < A.length && A[left]== Integer.MIN_VALUE){
                 left++;
@@ -55,6 +55,8 @@ class Solution {
                 right--;
             }
             else{
+            //Used as a condition to move your pointers so that repeated number do not exist also.
+            //Repeated number will be handled at the top, so no count will be added.
                 if(Math.abs(A[left]) <= Math.abs(A[right])){
                     count++;
                     currMax = Math.abs(A[right]);
