@@ -1,0 +1,58 @@
+/**
+Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
+
+(i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]).
+
+You are given a target value to search. If found in the array return its index, otherwise return -1.
+
+You may assume no duplicate exists in the array.
+
+Your algorithm's runtime complexity must be in the order of O(log n).
+
+Example 1:
+
+Input: nums = [4,5,6,7,0,1,2], target = 0
+Output: 4
+
+Example 2:
+
+Input: nums = [4,5,6,7,0,1,2], target = 3
+Output: -1
+**/
+
+class Solution {
+    public int search(int[] nums, int target) {
+        int mid;
+        int from = 0;
+        int end = nums.length -1; 
+        
+        while(from <= end){
+            mid = from + (end-from)/2;
+            if(nums[mid] == target){
+                return mid;
+            }
+            //Check left side is it ascending
+            if(isLeft(nums[from], nums[mid], nums[end],target)){
+                end = mid -1; //You can -1 or + 1 to mid because we already checked that mid is not target 
+            }
+            else { //Check right side instead
+                from = mid + 1;
+            }
+        }
+        return -1;
+        
+        
+    }
+    
+    public boolean isLeft(int left, int mid, int right, int target){
+        //First section checks if left side is in acending order and target is between those value
+        //Second section checks if right side is in ascending order, but the target is definitely not inside, thus it is on the left
+        if((left < mid && target <= mid && target >= left) || (mid < right && (target > right || target < mid)) ){ 
+            return true;
+        }
+        else{
+            return false;
+        }
+        
+    }
+}
