@@ -49,6 +49,7 @@ Write an efficient algorithm for the following assumptions:
 import java.util.*;
 
 //The idea is to put the index as the leaf's position and value is when a leaf lands on the spot.
+//However, the ideal solution, since i is the time, you just have to loop through until you find all the leaves and just return i. 
 
 class Solution {
     public int solution(int X, int[] A) {
@@ -74,4 +75,33 @@ class Solution {
         }
         return max;
     }
+}
+
+//Other solutions: See that your second loop is unnecessary
+public static int solution (int X, int[] A){
+
+    int[]counter = new int[X+1];
+    int ans = -1;
+    int x = 0;
+
+    for (int i=0; i<A.length; i++){
+        if (counter[A[i]] == 0){
+            counter[A[i]] = A[i];
+            x += 1;
+            if (x == X){
+                return i;
+            }
+        } 
+    }
+
+    return ans;
+}
+
+public static int solution(int X, int[] A) {
+    Set<Integer> values = new HashSet<Integer>();
+    for (int i = 0; i < A.length; i++) {
+        if (values.add(A[i])) X--; 
+        if (X == 0) return i;
+    }
+    return -1;
 }
