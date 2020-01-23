@@ -36,3 +36,25 @@ class Solution {
         }
     }
 }
+
+import java.util.*;
+
+class Solution {
+    public int solution(int[] A) {
+        int[] array = new int[A.length];
+        
+        for(int i : A){
+            if(i <= 0 || i > A.length){ //If its negative or too big means it definitely jumped already so you can ignore
+                continue;
+            }
+            array[i-1] = i;
+        }
+        for(int i = 0; i < array.length; i++){
+            if(array[i] != i+1){
+                return i + 1;
+            }
+        }
+        return array.length+1;
+    }
+}
+
