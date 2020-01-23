@@ -5,6 +5,10 @@
 
 1) Use modulus to shift the array. 
 
+**Counting Method**
+
+This method involves storing the the value of the first array as an index for a new array.
+
 **Caterpillar Method**
 
 This method involves having a starting point and ending point, usually at the start or the end of an array. And then based on some criteria, you move either one of it.
