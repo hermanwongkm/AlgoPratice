@@ -1,9 +1,13 @@
 
 # Methods
 
+**Others**
+1) Using map or set to store certain values
+
 **Array Methods**
 
 1) Use modulus to shift the array. 
+2) Sorting the array
 
 **Counting Method**
 
