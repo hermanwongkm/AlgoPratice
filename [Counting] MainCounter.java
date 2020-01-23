@@ -52,34 +52,33 @@ N and M are integers within the range [1..100,000];
 each element of array A is an integer within the range [1..N + 1].
 **/
 
+import java.util.*;
+
 class Solution {
     public int[] solution(int N, int[] A) {
         int[] counter = new int[N];
-        int max = 0;
         int currMax = 0;
-        int y = 0;
-        for (int x : A) {
-            if (x == N + 1) {
-                //Hold the max in currMax but do not update everything.
-                //Only update when necessary.
-                currMax = max;
-            }
-
+        int maxCounter = 0;
+        boolean flag = false;
+        for(int i : A){
+            if(i == N + 1){
+                flag = true;
+                maxCounter = currMax;
+            } 
             else {
-                if (counter[x - 1] < currMax) { //Update when we are doing something with that index.
-                    y = currMax + 1;
-                } else { //Normal increment 
-                    y = counter[x - 1] + 1; 
-                }
-                counter[x - 1] = y;
-                max = counter[x - 1] > max ? counter[x - 1] : max; //This holds the maximum value currently in array, and only update everything to this when it is N+1.
+                if(flag && counter[i-1] < maxCounter){ //If flag is true means MaxCounter has been executed 
+                    counter[i-1] = maxCounter;
 
+                }
+                counter[i-1]++;
+                if(counter[i-1] > currMax){ //This is simply to update the max in the whole array
+                    currMax = counter[i-1];
+                }
             }
         }
-        //Setting all values to the max if it is lower than the supposed maxValue.
-        for (int i = 0; i < counter.length; i++) {
-            if (counter[i] < currMax) {
-                counter[i] = currMax;
+        for(int i = 0; i < counter.length; i++){
+            if (counter[i] < maxCounter){
+                counter[i] = maxCounter;
             }
         }
         return counter;
