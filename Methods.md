@@ -3,6 +3,8 @@
 
 **Others**
 1) Using map or set to store certain values
+2) The only way to get a lower average is to encounter a number less than the current average
+3) Maximum slice of smallest slice is either 2 or 3.
 
 **Array Methods**
 
