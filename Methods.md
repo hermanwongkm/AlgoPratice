@@ -26,5 +26,10 @@ Prefix means before. prefix sum means the sum of everything before this index. T
 Usually you will take a index minus another index
 Subsequently, if you are asked to find the total from e.g. index 5 to 10. You just have to take index 10's value and minus away the value at index 5 as that comprises of all the value from 1 to 5. 
 
+ 1 2 3 4 5 6  [0,1,3,6,10,15,21]  between 2 & 4 i want 12 
+ It is always end + 1 minus start 
+ 
+ The third index of the original array, will refer to the sum of the third index (exclusive)
+
 **Max Slice Method**
 The method involves calculating the largest sum at each position. This is under the assumption that if at a particular index, this is the max sum that can be gotten, you can just simply add the next index and this will be the maximum up to including this new index. 
