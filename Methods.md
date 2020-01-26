@@ -33,3 +33,7 @@ Subsequently, if you are asked to find the total from e.g. index 5 to 10. You ju
 
 **Max Slice Method**
 The method involves calculating the largest sum at each position. This is under the assumption that if at a particular index, this is the max sum that can be gotten, you can just simply add the next index and this will be the maximum up to including this new index. 
+
+**Sstack Method**
+
+Use a stack to solve the problem. Matching brackets. 
