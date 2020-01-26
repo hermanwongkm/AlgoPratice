@@ -64,3 +64,37 @@ class Solution {
         
     }
 }
+
+import java.util.*;
+
+class Solution {
+    public int solution(int[] H) {
+        Stack<Integer> stack = new Stack();
+        int count = 0;
+        int height = 0;
+        for(int i = 0; i < H.length; i++){
+
+            while(!stack.isEmpty()){
+                if(height == H[i]){
+                    break;
+                }
+                if(height < H[i]){
+                    stack.push(H[i] - height);
+                    height = H[i];
+                    count++;
+                    break;
+                }
+                else{ //Height is higher than the new height
+                    height = height - stack.pop();       
+                }
+            }
+            if(stack.isEmpty()){
+                stack.push(H[i]);
+                count++;
+                height = H[i];
+                continue;
+            }
+        }
+        return count;
+    }
+}
