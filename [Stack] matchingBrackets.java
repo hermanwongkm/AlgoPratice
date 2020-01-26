@@ -60,3 +60,39 @@ class Solution {
     return 0;
     }
 }
+
+
+
+
+import java.util.*;
+
+class Solution {
+    public int solution(String S) {
+        if(S.length() == 0){
+            return 1;
+        }
+        Stack<Character> stack = new Stack();
+        for(int i = 0; i < S.length(); i++){
+            char bracket = S.charAt(i);
+            if(bracket == '{' || bracket == '(' ||
+            bracket == '['){
+                stack.push(bracket);
+            }else{
+                if(stack.isEmpty()){
+                    return 0;
+                }
+                char charComplete = stack.pop();
+                String x = ""+charComplete+bracket; //This is a string concat method 
+                if(!x.equals("{}") && !x.equals("()") && !x.equals("[]")){ //Note it is && not ||
+                    return 0;
+                }
+            }
+            
+        }
+        if(!stack.isEmpty()){
+            return 0;
+        }
+        return 1;
+    }
+}
+
