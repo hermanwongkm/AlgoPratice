@@ -34,6 +34,11 @@ Subsequently, if you are asked to find the total from e.g. index 5 to 10. You ju
 **Max Slice Method**
 The method involves calculating the largest sum at each position. This is under the assumption that if at a particular index, this is the max sum that can be gotten, you can just simply add the next index and this will be the maximum up to including this new index. 
 
-**Sstack Method**
+**Stack Method**
 
 Use a stack to solve the problem. Matching brackets. 
+
+**Leader Method**
+This method involves finding an element in an array who occur more than n/2. 
+This is based on the idea that there can only be one leader even if you split the array because no matter what it will occupy at least half. 
+You can maintain a virtual stack, just keep track of the last value as anything below that will be the same. And just pop off any values that are not equals the stack value. 
