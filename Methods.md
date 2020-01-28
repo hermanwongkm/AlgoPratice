@@ -32,7 +32,12 @@ Subsequently, if you are asked to find the total from e.g. index 5 to 10. You ju
  The third index of the original array, will refer to the sum of the third index (exclusive)
 
 **Max Slice Method**
+
 The method involves calculating the largest sum at each position. This is under the assumption that if at a particular index, this is the max sum that can be gotten, you can just simply add the next index and this will be the maximum up to including this new index. 
+
+This is also known as the Kadane algorithm and you can loop it backwards to calculate the sum starting from index i.
+
+Whereas, if you loop from the front, it is calculating ending with index i. 
 
 **Stack Method**
 
