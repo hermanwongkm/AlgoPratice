@@ -51,19 +51,19 @@ class Solution {
         int right[] = new int[A.length];
         int max = Integer.MIN_VALUE;
         
-        //Loop through from left to right to find maximum subarray
-        //from start to this index else 0 but store it in the index
-        //This will be your max subarray should up to this point.
+ //First, we can safely ignore A[0] and A[N-1] since by definition in the probelm above it is exclusive.
+ 
+ // left[i] as the maximum sum contiguous subsequence ending at index i,
         for(int i = 1; i < A.length -1; i++){
             left[i] = Math.max(left[i-1] + A[i], 0);
         }
         
+      //K2[i] as the maximum sum contiguous subsequence starting with index i.
         for(int i = A.length-2; i > 0; i--){
             right[i] = Math.max(right[i+1] + A[i], 0);
         }
         
-        //Since Y is only 1 index, we can find the max 
-        //of its left and right using the previously saved array
+        //Y is your i
         for(int i = 1; i < A.length-1; i++){
             max = Math.max(max, left[i-1] + right[i+1]);
         }
