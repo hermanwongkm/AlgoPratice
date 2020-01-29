@@ -1,10 +1,7 @@
+# This repo consists is an archival of all solutions done on various websites such as leetcode.
 
-# Methods
 
-**Others**
-1) Using map or set to store certain values
-2) The only way to get a lower average is to encounter a number less than the current average
-3) Maximum slice of smallest slice is either 2 or 3.
+####  Common Methods
 
 **Array Methods**
 
@@ -47,3 +44,9 @@ Use a stack to solve the problem. Matching brackets.
 This method involves finding an element in an array who occur more than n/2. 
 This is based on the idea that there can only be one leader even if you split the array because no matter what it will occupy at least half. 
 You can maintain a virtual stack, just keep track of the last value as anything below that will be the same. And just pop off any values that are not equals the stack value. 
+
+**Others**
+
+1) Using map or set to store certain values
+2) The only way to get a lower average is to encounter a number less than the current average
+3) Maximum slice of smallest slice is either 2 or 3.
