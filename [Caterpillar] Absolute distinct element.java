@@ -48,3 +48,42 @@ class Solution {
         return set.size();
     }
 }
+
+class Solution {
+    public int solution(int[] A) {
+        int start = 0;
+        int end = A.length -1;
+        int count = 0;
+        while(start <= end){
+            //this take care of the case when the last 2 are different number 
+            if(start == end){
+                count++;
+                 break;
+            }
+            //Removing duplicates and the first condition is to avoid out of bound
+            if(start != end && A[start] == A[start+1]){
+                start++;
+                continue;
+            }
+            if(start !=end && A[end] == A[end-1]){
+                end--;
+                continue;
+            }
+            if(A[start] + A[end] == 0){
+                start++;
+                end--;
+                count++;
+            }
+            else if(A[start] + A[end] < 0){
+                count++;
+                start++;
+            }
+            else{
+                count++;
+                end--;
+            }
+        }
+        //now start and end is the same, so plus 1.
+        return count;
+    }
+}
