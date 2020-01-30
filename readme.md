@@ -45,6 +45,10 @@ This method involves finding an element in an array who occur more than n/2.
 This is based on the idea that there can only be one leader even if you split the array because no matter what it will occupy at least half. 
 You can maintain a virtual stack, just keep track of the last value as anything below that will be the same. And just pop off any values that are not equals the stack value. 
 
+**Binary Search Method**
+
+This method invovles using binary search to search for the value that you want. It can be anything related to the problem. You use this value to then loop through another function to check if this value is possible or not. 
+
 **Others**
 
 1) Using map or set to store certain values
