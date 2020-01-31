@@ -32,6 +32,8 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] A) {
+    //By sorting the array, we have guaranteed that P+R > Q and Q+R > P (because R is always the biggest).
+    //Now what remains, is the proof that P+Q > R, that can be found out by traversing the array
         Arrays.sort(A);
         int count = 0;
         //Fix the first pointer
