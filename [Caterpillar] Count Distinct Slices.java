@@ -37,35 +37,33 @@ N is an integer within the range [1..100,000];
 M is an integer within the range [0..100,000];
 each element of array A is an integer within the range [0..M].
 **/
-
 import java.util.*;
-
-// you can write to stdout for debugging purposes, e.g.
-// System.out.println("this is a debug message");
 
 class Solution {
     public int solution(int M, int[] A) {
-        int left = 0;
-        int right = 0;
+        HashSet<Integer> set = new HashSet();
+        int start = 0;
+        int end = 0;
         int count = 0;
-        HashSet<Integer> set = new HashSet<Integer>();
-        while(right < A.length && left < A.length){
-            //Just a random condition.
+        while(start < A.length && end < A.length){ //You can have end < A.length because that would be the maximum
+            //cannot be start < end because you want your end to reach the actual end.
+            //start < end might lead to early termination
             if(count > 1000000000){
                 return 1000000000;
             }
-                if(set.contains(A[right])){//not unique
-                    set.remove(A[left]);
-                    left++;
-                }
-                else{
-                    set.add(A[right]);
-                    //This will count 0 to right. 
-                    //0-5,1-5,2-5...
-                    count = count + (right-left) + 1;
-                    right++;
-                }
+            if(set.contains(A[end])){
+                set.remove(A[start]);
+                start++;
+            }
+            else{
+                set.add(A[end]);
+                count = count + (end - start) +1;
+                end++;
+                //The initial (0,0) is included in the first iteration
+                //Next is start = 0 end = 1. So, you have (0,1) and (1,1)
+                //Next is start 0 9 end = 2. So you have (0,2), (1,2), (2,2)
+            }
         }
-        return count;
+    return count;
     }
 }
