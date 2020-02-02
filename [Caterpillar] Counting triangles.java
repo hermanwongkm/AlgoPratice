@@ -28,41 +28,51 @@ N is an integer within the range [0..1,000];
 each element of array A is an integer within the range [1..1,000,000,000].
 
 **/
+// you can also use imports, for example:
 import java.util.*;
+
+// you can write to stdout for debugging purposes, e.g.
+// System.out.println("this is a debug message");
 
 class Solution {
     public int solution(int[] A) {
-    //By sorting the array, we have guaranteed that P+R > Q and Q+R > P (because R is always the biggest).
-    //Now what remains, is the proof that P+Q > R, that can be found out by traversing the array
+        int count = 0; 
+        //Sort the array first so you only need to compare P + Q > R. 
+        //Since it is sorted, R plus anything will always be larger
         Arrays.sort(A);
-        int count = 0;
-        //Fix the first pointer
+        //Now you loop through first index
+        //minus 2 because that's as far as it gets to make a triangle
         for(int i = 0; i < A.length -2; i++){
-            //fix third pointer, but want it to be independent ofsecond pointer loop
-            int k = i + 2;
-            //Fix the second pointer
-            for(int j = i +1; j < A.length-1; j++){
-                //loop through the third pointer to find the max it can go for first and second index
+            //Loop through second index
+            //However, instead of having another loop for the third index
+            //The idea is that if it is a triangle for the current indexes,
+            //It will also be a valid triangle for the future indexes, so you dont have to recheck
+            int k = i + 2; 
+            //Imagine a scenario, [10, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+            //Index 1 = 10, index 2 = 15. K would reach all the way to end of array
+            //Now, index 1 = 10, index 2 = 16. K is still at the end. You dont have to
+            //recalculate so it is faster 
+            for(int j = i + 1; j < A.length - 1; j++){
                 while(k < A.length && A[i] + A[j] > A[k]){
+                    //Try to find the max k for the triangle as it is sorted, you can break once
+                    //it is not fulfilled as the others will also not be valid
                     k++;
                 }
-                //The above while loop will not run once you found the max for k and thus, the next line will just run immediately, counting the number of triangles able to be formed till here with a fixed i.
-                count = count + k-j-1; // you always have an extra k++ then it stops that why you need a -1
-                 // for every i and j we figure out the maximal k that can be a
-                // triangular, and when we increase j the former k would still
-                // be a triangular because of the sorted array, so we just need
-                // to count the number of triangular between j and k.
+                //Now, once you broke out, means you found the max triangle
+                //However, because k = i + 2, if you use k - j, it will always be 1 ahead
+                //even if it is not valid. So you need to minus.
+                count = count + k - j - 1; //k - j counts the number of triangle inbetween 
+            
+                
             }
         }
         return count;
     }
 }
 
-// you can also use imports, for example:
-import java.util.*;
 
-// you can write to stdout for debugging purposes, e.g.
-// System.out.println("this is a debug message");
+
+import java.util.*;
 
 class Solution {
     public int solution(int[] A) {
