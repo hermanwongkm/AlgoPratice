@@ -47,25 +47,38 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] A) {
+        //You want to acheive the minimum of absolute
+        //So you want to get as close as possible to 0
+        //That is done by finding 2 similar negative and positive number
+        //But if it is all positive, i want the first 2.
+        //But if it is all negative , i want the last 2.
+        //It would be first 2, but this question allows repeated value 
         Arrays.sort(A);
-        if(A[0] >= 0){
+        if(A[0] >= 0){ //All positive or zero.
             return A[0] + A[0];
-        }else if(A[A.length-1] < 0){
+        } 
+        else if (A[A.length-1] < 0){ //All negative
             return Math.abs(A[A.length-1] + A[A.length-1]);
         }
-        int left = 0;
-        int right = A.length-1;
-        int min = Integer.MAX_VALUE;
-        
-        while(left <= right){
-            int currSum = A[left] + A[right];
-            min = Math.min(Math.abs(currSum),min);
-            if(currSum >= 0){//If greater than 0 means right too big, as left is the smallest negative already e.g. -18 vs -1. 
-                right--;
-            }else{
-                left++;
+        else{
+            int min = Integer.MAX_VALUE;
+            int start = 0;
+            int end = A.length -1;
+            while(start < end){
+                int sum = A[start] + A[end];
+                min = Math.min(min, Math.abs(sum));
+                if(sum == 0){
+                    return 0; //The lowest possible value
+                }
+                if(sum < 0){
+                    //negative too big
+                    start++;
+                }
+                else{
+                    end--;
+                }
             }
-        }   
-        return min;
+            return min;
+        }
     }
 }
