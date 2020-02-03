@@ -35,6 +35,7 @@ class Solution {
         int[] c1 = new int[51];
         int[] d1 = new int[51];
         
+        //You count the number of socks into an array using counting method
         for(int i = 0; i < C.length; i++){
             c1[C[i]] = c1[C[i]] + 1;
         }
@@ -44,21 +45,23 @@ class Solution {
         
         for(int i = 0; i < 51; i++){
             int numOfCleanSocks = c1[i];
-            
+            //Remove all pairs of possible cleansocks first
             pairsOfCleanSocks = pairsOfCleanSocks + (numOfCleanSocks/2);
             int remainingCleanSocks = numOfCleanSocks%2;
             
+            //Check if you can wash a dirty socks 
             if(remainingCleanSocks == 1 && d1[i] >= 1 && K >= 1){
                 K--;
                 pairsOfCleanSocks++;
                 d1[i] = d1[i] -1;
             }
         }
-        
+        //No point washing anymore
         if(K <=1){
             return pairsOfCleanSocks;
         }
         
+        //Check if you can wash the remaining dirty socks
         for(int i = 0; i < 51; i++){
             while(d1[i] >= 2){
                 K = K - 2;
