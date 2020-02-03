@@ -77,3 +77,32 @@ public static int solution(int[] A) {
     }
     return ans;
   }
+
+    //The idea is that you traverse from left to right first. Now, you know the maximum you can get.
+    //However, what you dont know is there is a wall on the right side that will hold the water/
+    //So now, you loop through from right to left and for each index, you will take the minimum.
+    //This way, you will ensure that there is a wall on the right. 
+    int solution(vector<int> &A) {
+    int n = A.size(), res = 0;
+    vector<int> depths(n);
+    int wall = A[0];
+    for(int i=1; i<n-1; ++i)
+    {
+        if(A[i] > wall) wall = A[i];
+        else depths[i] = wall - A[i];
+    }
+    
+    wall = A[n-1];
+    for(int i= n-2; i>0; --i)
+    {
+        if(A[i] > wall) 
+        {
+            wall = A[i];
+            depths[i] = 0;
+        }
+        else depths[i] = min(wall-A[i], depths[i]);
+        
+        res = max(res, depths[i]);
+    }
+    return res;
+}
