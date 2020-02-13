@@ -26,7 +26,14 @@ Subsequently, if you are asked to find the total from e.g. index 5 to 10. You ju
  1 2 3 4 5 6  [0,1,3,6,10,15,21]  between 2 & 4 i want 12 
  It is always end + 1 minus start 
  
+ It is the sum excluding the front that you are minusing away. 
  The third index of the original array, will refer to the sum of the third index (exclusive)
+ 
+ Back - front == number inbetween + back
+ 
+ back - front + 1 == number inbetween + back + front
+ 
+ back - front - 1 == exclusive of both 
 
 **Max Slice Method**
 
