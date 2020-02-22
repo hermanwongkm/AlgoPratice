@@ -55,19 +55,23 @@ class Solution {
             }
         }
         
+        //The idea is that for both sides the leader will be the same that is found from find leader.
+        // Assume a value X is not a leader of the whole array.
+        // Can value X have an equi leader?
+        // The answer is NO.
         int leftLeaderCount = 0;
         int count = 0;
         int right = 0;
         for(int i = 0; i < A.length; i++){
             if(A[i] == leader){
                 leftLeaderCount++;
-                right = leaderCount - leftLeaderCount;
+                rightLeaderCount = leaderCount - leftLeaderCount;
             }
             int leftTotal = i + 1;
             int rightTotal = A.length - leftTotal;
             
             int leftOthers = leftTotal - leftLeaderCount;
-            int rightOthers = rightTotal - right;
+            int rightOthers = rightTotal - rightLeaderCount;
             if(leftLeaderCount > leftOthers && right > rightOthers){
                 count++;
             }
