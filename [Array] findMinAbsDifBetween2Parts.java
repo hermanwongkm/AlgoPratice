@@ -54,7 +54,6 @@ class Solution {
     public int solution(int[] A) {
         int sum = 0;
         int first = 0;
-        int[] prefixSum = new int[A.length];
         int ans = Integer.MAX_VALUE;
         
         //This is o(N)
