@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Solution {
+    public int solution(int[] T) {
+    //Winter always start at index 0
+    //Max temperature in winter so far
+    int maxWinter = T[0];
+    int maxTemp = T[0];
+    int ans = 1; 
+    for(int i = 0; i < T.length; i++){
+        if(T[i] < maxWinter){
+            //Found a new lower value so winter is extended
+            ans = i + 1;
+            //Since index i is lower than the max, it is also infront of max, so ur maxWinter becomes the max Temp in winter so far
+            maxWinter = maxTemp;
+        } 
+        else{
+            maxTemp = T[i];
+        }
+    }
+    return ans;
+    }
+}
