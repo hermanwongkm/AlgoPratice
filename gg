@@ -1,0 +1,69 @@
+// you can also use imports, for example:
+import java.util.*;
+
+class Solution {
+    public String solution(int U, int L, int[] C) {
+        int top[] = new int[C.length];
+        int bottom[] = new int[C.length];
+        int topCount = 0;
+        int bottomCount = 0;
+        int i = 0;
+        String ans = "";
+        
+        if(find(i, C,top,bottom,U,L,topCount,bottomCount)){
+        for(int j = 0; j < top.length; j++){
+            ans = ans + Integer.toString(top[j]);
+        }
+        ans = ans + ",";
+        for(int j = 0; j < bottom.length; j++){
+            ans = ans + Integer.toString(bottom[j]);
+        }
+    }
+    else{
+        return "IMPOSSIBLE";
+    }
+    return ans;
+    }
+    
+    public static boolean find(int i, int[] C, int[] top, int[] bottom,int U, int L, int topCount, int bottomCount ) {
+        if(topCount == U && bottomCount == L){
+            return true;
+        }
+
+        //Definitely be 1,1 if it is 2
+        if(C[i] == 2){
+            top[i] = 1;
+            bottom[i] = 1;
+            if(find(i + 1, C,top,bottom,U,L,topCount + 1,bottomCount + 1)){
+                return true;
+            }
+        }
+        else if(C[i] == 0){
+            top[i] = 0;
+            bottom[i] = 0;
+            if(find(i + 1, C,top,bottom,U,L,topCount,bottomCount)){
+                return true;
+            }
+        }
+        else{
+            if(top[i] == 0 && bottom[i] == 0){
+                //try top first greedily
+                top[i] = 1;
+                 if(find(i + 1, C,top,bottom,U,L,topCount + 1 ,bottomCount)){
+                     return true;
+                 }
+            }
+            else if(top[i] == 1 && bottom[i] == 0){
+                top[i] = 0;
+                bottom[i] = 1;
+                find(i + 1, C,top,bottom,U,L,topCount ,bottomCount + 1);
+            }           
+            else if(top[i] == 0 && bottom[i] == 1){
+                return false;
+            }
+        }
+    return false;
+    }
+    
+    
+}
