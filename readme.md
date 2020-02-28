@@ -5,8 +5,10 @@
 
 **Array Methods**
 
-1) Use modulus to shift the array. 
-2) Sorting the array
+1. Use modulus to shift the array. 
+2. Sorting the array
+3. Keep track of the lowest/highest value so far and compare against it as you go on. Updating when necessary.
+4. Keep track of the maximum subarray by taking Max(max + A[i], A[i]).
 
 **Counting Method**
 
