@@ -1,0 +1,27 @@
+function checkMagazine(magazine, note) {
+    var mapMag = new Map();
+    for(var i = 0; i < magazine.length; i++){
+        if(mapMag.has(magazine[i])){
+            mapMag.set(magazine[i], mapMag.get(magazine[i]) + 1);
+        }
+        else{
+            mapMag.set(magazine[i],1);
+        }
+    } 
+    for(var i = 0; i < note.length; i++){
+        if(mapMag.has(note[i])){
+            var count = mapMag.get(note[i]);
+            if(count === 1){
+                mapMag.delete(note[i]);
+            }
+            else{
+                mapMag.set(note[i], mapMag.get(note[i]) -1);
+            }
+        }
+        else{
+            console.log("No");
+            return "delete"; 
+        }
+    }
+console.log("Yes");
+}
