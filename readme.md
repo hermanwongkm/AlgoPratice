@@ -9,6 +9,7 @@
 2. Sorting the array
 3. Keep track of the lowest/highest value so far and compare against it as you go on. Updating when necessary.
 4. Keep track of the maximum subarray by taking Max(max + A[i], A[i]).
+5. Use seperate array to store highest/lowest value so far before this index.
 
 **Counting Method**
 
