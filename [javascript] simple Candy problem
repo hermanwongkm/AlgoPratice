@@ -1,0 +1,12 @@
+// Complete the chocolateFeast function below.
+function chocolateFeast(n, c, m) {
+    var numOfWrapper = Math.floor(n/c);
+    var ans = numOfWrapper;
+    while(numOfWrapper >= m){
+        var additionalWrapper = Math.floor(numOfWrapper/m);
+        ans = ans + additionalWrapper;
+        numOfWrapper = numOfWrapper - (m * additionalWrapper) + additionalWrapper;
+    }
+// console.log(ans);
+return ans;
+}
