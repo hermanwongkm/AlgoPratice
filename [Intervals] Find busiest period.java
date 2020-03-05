@@ -23,8 +23,8 @@ There are maximum 3 guests at time 5.
     // Sort arrival and exit arrays 
     Arrays.sort(entry); 
     Arrays.sort(exit); 
-    int enterIndex = 1; 
-    int exitIndex = 0;
+    int i = 1; 
+    int j = 0;
     int max = 1;
     int currGuest = 1;
     int time = entry[0];
