@@ -62,6 +62,9 @@ This method invovles using binary search to search for the value that you want. 
 1.Use   int mid = start + (end - start)/2;  to avoid overflow
 2. only do mid + 1 and mid -1, if you are searching for a value, as you will have that checking if mid is the value condition. Thus, only remove this value when you are definitely sure. E.g. refer to search for minimum value.
 
+**Interval Methods**
+1. Sort the array and use the earliest time greedily to fit the most number of interval.
+
 **Others**
 
 1) Using map or set to store certain values
