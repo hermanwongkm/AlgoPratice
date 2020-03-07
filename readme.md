@@ -65,6 +65,7 @@ This method invovles using binary search to search for the value that you want. 
 **Interval Methods**
 1. Sort the array and use the earliest time greedily to fit the most number of interval.
 2. Sort the arrays, then simply count how many people enter or left based on start time < next end time. 
+3. Sort the array by start time, if the next start time is within the current end time, it overlaps. 
 
 **Others**
 
