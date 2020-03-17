@@ -11,7 +11,7 @@ Explanation: 11 = 5 + 5 + 1
 class Solution {
     public int coinChange(int[] coins, int amount) {
         int[] memo = new int[amount + 1];
-        Arrays.fill(memo, 999); //Fill the array up so we can save the minimum
+        Arrays.fill(memo, amount + 1); //Fill the array up so we can save the minimum
         memo[0] = 0; //Minimum number of coin for amount $0 
         
         for(int i = 1;i <= amount; i++){
@@ -26,7 +26,7 @@ class Solution {
                 }
             }
         }
-        if(memo[amount] == 999){
+        if(memo[amount] == amount + 1){
             return -1;
         }
         return memo[amount];
