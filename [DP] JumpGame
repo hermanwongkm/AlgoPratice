@@ -1,0 +1,46 @@
+/**
+Given an array of non-negative integers, you are initially positioned at the first index of the array.
+
+Each element in the array represents your maximum jump length at that position.
+
+Determine if you are able to reach the last index.
+
+Example 1:
+
+Input: [2,3,1,1,4]
+Output: true
+Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+
+Example 2:
+
+Input: [3,2,1,0,4]
+Output: false
+Explanation: You will always arrive at index 3 no matter what. Its maximum
+             jump length is 0, which makes it impossible to reach the last index.
+
+
+**/
+
+class Solution {
+    public boolean canJump(int[] nums) {
+        int dp[] = new int[nums.length];
+        dp[nums.length -1] = 1; //The last index will always be true, you can get to itself 
+        for(int i = nums.length -2; i >= 0; i--){ //Start from the back
+            System.out.println(i);
+            //for each index, you check what is the maximum you can go from this index to the max
+            int furtherestJump = Math.min(nums.length -1, i + nums[i]); //Math.min because you dont want out of bound
+            //So if from this index, i can access any index that can reach the end, then i will update this index as a possible route
+            for(int j = i + 1; j <= furtherestJump; j++){
+                if(dp[j] == 1){
+                    dp[i] = 1;
+                    break;
+                }
+            }
+            
+        }
+        // for(int i = 0; i < nums.length; i++){
+        //     System.out.println(dp[i]);
+        // }
+return dp[0] == 1;
+    }
+}
