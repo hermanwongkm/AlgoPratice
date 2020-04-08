@@ -1,0 +1,43 @@
+/**
+Given an integer array with all positive numbers and no duplicates, find the number of possible combinations that add up to a positive integer target.
+
+Example:
+
+nums = [1, 2, 3]
+target = 4
+
+The possible combination ways are:
+(1, 1, 1, 1)
+(1, 1, 2)
+(1, 2, 1)
+(1, 3)
+(2, 1, 1)
+(2, 2)
+(3, 1)
+
+Note that different sequences are counted as different combinations.
+
+Therefore the output is 7.
+
+**/
+
+class Solution {
+    public int combinationSum4(int[] nums, int target) {
+        //The sub problem is if the target is of a lower value
+        int[] dp = new int[target + 1];
+        dp[0] = 1; 
+        Arrays.sort(nums); 
+        for(int i = 1; i <= target; i++){ //Loop through from value 1 to target
+            for(int j = 0; j < nums.length; j++){ //Loop through the number itself
+                if(nums[j] <= i){ //The idea is that for example number 1, ways to form it is 1 so,
+                    //dp[1] = dp[1] + dp[1-1] which is dp[0]
+                    // if number is 2. Then you got (1,1) and (2)
+                    //so, dp[2] = dp[2] + dp[1] and dp[2] = dp[2] + dp[0]; 
+                    //So the sub problem is the number and you use previously stored values for that number to add it to the sum
+                    dp[i] = dp[i] + dp[i-nums[j]];
+                }
+            }
+        }
+        return dp[target];
+    }
+}
