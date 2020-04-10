@@ -36,7 +36,8 @@ class Solution {
                 else{
                     //If it does not match, you are taking the max if the substring 
                     //imaginging you remove from each e.g.
-                    //aae vs aad. you are comparing aa vs aad and aae vs aa. 
+                    //xm vs mz. you are comparing xm vs m and x vs mz. 
+                    //so you will take the higher value of 1 which is xm vs m 
                     dp[i+1][j+1] = Math.max(dp[i][j+1], dp[i+1][j]);
                 }
             }
