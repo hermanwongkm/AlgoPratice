@@ -3,6 +3,9 @@
 
 ####  Common Methods
 
+**Common Strategies**
+1. Use a Hashset or a HashMap to store values that you want to find.
+
 **Array Methods**
 
 1. Use modulus to shift the array. 
