@@ -4,7 +4,12 @@
 ####  Common Methods
 
 **Common Strategies**
-1. Use a Hashset or a HashMap to store values that you want to find.
+1. Can I use a Hashset or a HashMap to store values that you want to find?
+2. Can I sort it?
+3. Can I use sliding window?
+4. Can I use 2 pointers?
+5. Can I keep track of the minimum/maximum value and do some computations?
+6. Can I attack it from the front and end and do some sort of computations?
 
 **Array Methods**
 
