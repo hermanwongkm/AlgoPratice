@@ -19,6 +19,7 @@ return [0, 1].
 * You can do this method as if you had encounter its pair it would have been in the hashMap already.
 **/
 
+//Use hashMap to maintain certain information
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         HashMap<Integer,Integer> map = new HashMap();
