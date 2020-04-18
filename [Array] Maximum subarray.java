@@ -9,6 +9,8 @@ Explanation: [4,-1,2,1] has the largest sum = 6.
 
 **/
 
+//This is Kadane algorithm
+//If the previous contigious sum is a negative number, and the next one is positive, we can just use the new positive number as the maximum.
 class Solution {
     public int maxSubArray(int[] nums) {
         int max = nums[0];
