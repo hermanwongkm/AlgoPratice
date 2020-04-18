@@ -10,6 +10,7 @@
 4. Can I use 2 pointers?
 5. Can I keep track of the minimum/maximum value and do some computations?
 6. Can I attack it from the front and end and do some sort of computations?
+7. Can i use kadane Algorithm and keep track of maximum subarray? Think of contious subarray as a graph, and you are slowly adding it up
 
 **Array Methods**
 
@@ -23,7 +24,7 @@
 
 This method involves storing the the value of the first array as an index for a new array.
 
-**Caterpillar Method**
+**Sliding window Method**
 
 This method involves having a starting point and ending point, usually at the start or the end of an array. And then based on some criteria, you move either one of it.
 
