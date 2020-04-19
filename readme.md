@@ -8,7 +8,7 @@
 2. Can I sort it?
 3. Can I use sliding window?
 4. Can I use 2 pointers?
-5. Can I keep track of the minimum/maximum value and do some computations?
+5. Can I keep track of the minimum and maximum value and do some computations?
 6. Can I attack it from the front and end and do some sort of computations?
 7. Can i use kadane Algorithm and keep track of maximum subarray? Think of contious subarray as a graph, and you are slowly adding it up
 
