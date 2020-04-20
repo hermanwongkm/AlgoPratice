@@ -29,3 +29,28 @@ class Solution {
         return max;
     }
 }
+
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int front = 0;
+        int back = 0;
+        int ans = 0;
+        int count = 0;
+        HashSet<Character> set = new HashSet();
+        
+        while(front < s.length() && back < s.length()){
+            if(!set.contains(s.charAt(back))){
+                set.add(s.charAt(back));
+                count++;
+                back++;
+            }
+            else{ //If it contains it already
+                set.remove(s.charAt(front));
+                front++;
+                count--;
+            }
+            ans = Math.max(ans,count);
+        }
+        return ans;
+    }
+}
