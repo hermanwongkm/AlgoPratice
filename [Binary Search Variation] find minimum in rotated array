@@ -19,6 +19,7 @@ Output: 0
 
 
 **/
+//Objective is to find the smaller section
 
 class Solution {
     public int findMin(int[] nums) {
