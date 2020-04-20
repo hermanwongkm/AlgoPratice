@@ -47,6 +47,7 @@ class Solution {
     public boolean isLeft(int left, int mid, int right, int target){
         //First section checks if left side is in acending order and target is between those value
         //Second section checks if right side is in ascending order, but the target is definitely not inside, thus it is on the left
+        //The concept is based on the fact that ONE SIDE will definitely be in ascending order no matter how you split it. 
         if((left < mid && target <= mid && target >= left) || (mid < right && (target > right || target < mid)) ){ 
             return true;
         }
