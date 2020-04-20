@@ -7,7 +7,7 @@
 1. Can I use a Hashset or a HashMap to store values that you want to find?
 2. Can I sort it?
 3. Can I use sliding window?
-4. Can I use 2 pointers?
+4. Can I use 2 pointers? Sometimes you can fix a third pointer and move the other 2 pointers
 5. Can I keep track of the minimum and maximum value and do some computations?
 6. Can I attack it from the front and end and do some sort of computations?
 7. Can i use kadane Algorithm and keep track of maximum subarray? Think of contious subarray as a graph, and you are slowly adding it up
