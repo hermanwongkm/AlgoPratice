@@ -33,7 +33,8 @@ class Solution {
             //The end -start will count the possible contigious length for example 
             //If theres 4 value 1 2 3 4
             //it will be 3 - 0 = 3 counts. which are, {1,2} {1,2,3} {1,2,3,4}
-            //Because 1 itself is counted previously at the + 1.
+            //And the + 1 will count for the 1.
+            //Imagine a line, to 4 minus 2.
              count = count + (end-start) + 1;
             end++;
         }
