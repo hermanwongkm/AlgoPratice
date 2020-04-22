@@ -46,38 +46,10 @@ Write an efficient algorithm for the following assumptions:
 
 
 **/
+//The idea is that you have a counter
+//You will use the value in the array as the index for counter
+//you will increment the counter when its not equals zero. Meaning you never seen it before.
 import java.util.*;
-
-//The idea is to put the index as the leaf's position and value is when a leaf lands on the spot.
-//However, the ideal solution, since i is the time, you just have to loop through until you find all the leaves and just return i. 
-
-class Solution {
-    public int solution(int X, int[] A) {
-        if(X == 1){
-            return A[0];
-        }
-        int[] array =  new int[X + 1]; 
-        Arrays.fill(array,-1);
-        array[0] = 1; //Dont use the first index as their leaves position starts with 1.
-        for(int i = 0; i < A.length; i++){
-            if(array[A[i]] == -1){ //If it's not filled yet
-                array[A[i]] = i;
-            }
-        }
-        int max = -2; //Since the value holds the time, you just loop through the array to find max
-        for(int x: array){
-            if(x == -1){
-                return -1;
-            }
-            if(x> max){
-                max = x;
-            }
-        }
-        return max;
-    }
-}
-
-//Other solutions: See that your second loop is unnecessary
 public static int solution (int X, int[] A){
 
     int[]counter = new int[X+1];
