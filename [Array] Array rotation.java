@@ -86,17 +86,3 @@ public class Solution {
 }
 
 
-//Rotate left in javascript
-//I noticed that for example length is 5 and you rotate by 4. You move backwards by 4. but you also move forward by 1.
-function rotLeft(a, d) {
-    var rotation = d%a.length;
-    var ans = [];
-
-    var i;
-    for(i = 0; i < a.length; i++){
-        ans[(i + (a.length - rotation)) % a.length] = a[i]; 
-    }
-    return ans;
-
-}
-
