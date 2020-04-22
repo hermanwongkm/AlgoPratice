@@ -57,6 +57,7 @@ class Solution {
         int ans = Integer.MAX_VALUE;
         
         //This is o(N)
+        //You first get the entire sum
         for(int i = 0; i < A.length;i++){
             sum = sum + A[i];
         }
