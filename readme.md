@@ -10,8 +10,9 @@
 4. Can I use 2 pointers? Sometimes you can fix a third pointer and move the other 2 pointers
 5. Can I keep track of the minimum and maximum value and do some computations?
 6. Can I attack it from the front and end and do some sort of computations?
-7. Can i use kadane Algorithm and keep track of maximum subarray? Think of contious subarray as a graph, and you are slowly adding it up
-
+7. Can I use kadane Algorithm and keep track of maximum subarray? Think of contious subarray as a graph, and you are slowly adding it up
+8. Can I write values from the back of the array or do overwriting?
+ 
 **Array Methods**
 
 1. Use modulus to shift the array. 
