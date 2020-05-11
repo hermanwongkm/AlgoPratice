@@ -7,6 +7,9 @@
 Question: Remove duplicates from sorted array
 Method: Keep a pointer of what the position you can overwrite, and use a loop to iterate through. Thus, reducing time complexity by shifting each value at most only once.
 
+** Getting the next largest value **
+Question: Find the next largest value 
+Method: Find the point until it stops being strictly increasing. Swap this value with a value in that section that is the next greater value than this. Reverse the whole section.
 
 
 **Common Strategies**
