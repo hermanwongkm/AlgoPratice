@@ -3,6 +3,12 @@
 
 ####  Common Methods
 
+** Array **
+Question: Remove duplicates from sorted array
+Method: Keep a pointer of what the position you can overwrite, and use a loop to iterate through. Thus, reducing time complexity by shifting each value at most only once.
+
+
+
 **Common Strategies**
 1. Can I use a Hashset or a HashMap to store values that you want to find?
 2. Can I sort it?
