@@ -21,6 +21,10 @@ Question:Problems that can be solved using cyclic rotation
 
 Method: Have a outer loop that loops through everything, but have a while loop inside that will try to complete a cycle. Break the outer loop when everything is done.
 
+** Understanding binary tree traversal **
+
+1. When you see pre/post/in order traversal. Think of it as refer to the node itself. Thus, pre order means n l r while inorder means lnr. These are just various method of traversing the tree.
+
 **Common Strategies**
 1. Can I use a Hashset or a HashMap to store values that you want to find?
 2. Can I sort it?
