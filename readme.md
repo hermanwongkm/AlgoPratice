@@ -21,9 +21,12 @@ Question:Problems that can be solved using cyclic rotation
 
 Method: Have a outer loop that loops through everything, but have a while loop inside that will try to complete a cycle. Break the outer loop when everything is done.
 
-** Understanding binary tree traversal **
+**Understanding binary tree traversal**
 
 1. When you see pre/post/in order traversal. Think of it as refer to the node itself. Thus, pre order means n l r while inorder means lnr. These are just various method of traversing the tree.
+
+**Common String problems**
+1. Replace and remove: replace all As with Ds and all delete all Bs. The idea is count the required space, which is array + 2As and delete all the Bs. This is done first by a forward iteration, Then we do a backwards iteration. Filling up the array backwards.
 
 **Common Strategies**
 1. Can I use a Hashset or a HashMap to store values that you want to find?
