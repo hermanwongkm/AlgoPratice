@@ -32,6 +32,10 @@ Method: Have a outer loop that loops through everything, but have a while loop i
 **Binary Search**
 1. You can use binary search when you notice you can remove large chunk of numbers
 2. For example, finding the largest integer who's square is less than or equal to a input. 
+
+**Other forms of search**
+1. Searching in a sorted 2D matrix: Solution: Starting from right corner, reduce either row or column, as the entire row will be less than target and entire column will be larger than target.
+
 **Common Strategies**
 1. Can I use a Hashset or a HashMap to store values that you want to find?
 2. Can I sort it?
