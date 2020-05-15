@@ -29,6 +29,9 @@ Method: Have a outer loop that loops through everything, but have a while loop i
 1. Replace and remove: replace all As with Ds and all delete all Bs. The idea is count the required space, which is array + 2As and delete all the Bs. This is done first by a forward iteration, Then we do a backwards iteration. Filling up the array backwards.
 2. Reverse a string: The solution is to first, reverse the entire string. So now. What is messed up is that each word is individually reversed. However, each word has the correct length. So now you just have to reverse individual words.
 
+**Binary Search**
+1. You can use binary search when you notice you can remove large chunk of numbers
+2. For example, finding the largest integer who's square is less than or equal to a input. 
 **Common Strategies**
 1. Can I use a Hashset or a HashMap to store values that you want to find?
 2. Can I sort it?
