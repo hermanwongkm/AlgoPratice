@@ -36,6 +36,11 @@ Method: Have a outer loop that loops through everything, but have a while loop i
 **Other forms of search**
 1. Searching in a sorted 2D matrix: Solution: Starting from right corner, reduce either row or column, as the entire row will be less than target and entire column will be larger than target.
 
+**Solving sorted array questions**
+1. Iterate both pointers at the same time. These are problems such as find *intersection of array*
+2. Fill up the array from the back. This is good for sorted array as if it is sorted, you'll not touch/overwrite the front of that array unnecessarily. These are problems such as *merge 2 sorted array*
+
+
 **Common Strategies**
 1. Can I use a Hashset or a HashMap to store values that you want to find?
 2. Can I sort it?
