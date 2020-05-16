@@ -40,6 +40,11 @@ Method: Have a outer loop that loops through everything, but have a while loop i
 1. Iterate both pointers at the same time. These are problems such as find *intersection of array*
 2. Fill up the array from the back. This is good for sorted array as if it is sorted, you'll not touch/overwrite the front of that array unnecessarily. These are problems such as *merge 2 sorted array*
 
+**Solving interval questions**
+1. *Question on number of concurrent events running* Sort the arrays by both the starting and ending point. Then, if it is starting, you will add to count. If it is a ending, you can minus. This will give you the number of concurrent events running.
+2. Sort the array and use the earliest time greedily to fit the most number of interval.
+3. Sort the arrays, then simply count how many people enter or left based on start time < next end time. 
+4. Sort the array by start time, if the next start time is within the current end time, it overlaps. 
 
 **Common Strategies**
 1. Can I use a Hashset or a HashMap to store values that you want to find?
@@ -109,11 +114,6 @@ This method invovles using binary search to search for the value that you want. 
 
 1.Use   int mid = start + (end - start)/2;  to avoid overflow
 2. only do mid + 1 and mid -1, if you are searching for a value, as you will have that checking if mid is the value condition. Thus, only remove this value when you are definitely sure. E.g. refer to search for minimum value.
-
-**Interval Methods**
-1. Sort the array and use the earliest time greedily to fit the most number of interval.
-2. Sort the arrays, then simply count how many people enter or left based on start time < next end time. 
-3. Sort the array by start time, if the next start time is within the current end time, it overlaps. 
 
 **Others**
 
