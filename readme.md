@@ -42,8 +42,8 @@ Method: Have a outer loop that loops through everything, but have a while loop i
 
 **Solving interval questions**
 1. *Question on number of concurrent events running* Sort the arrays by both the starting and ending point. Then, if it is starting, you will add to count. If it is a ending, you can minus. This will give you the number of concurrent events running.
-2. Sort the array by start time, if the next start time is within the current end time, it overlaps. 
-3. Sort the array and use the earliest time greedily to fit the most number of interval.
+2. (*Merge intervals*) Sort the array by start time, if the next start time is within the current end time, it overlaps. 
+3. (*Remove overlap*) Sort the array and use the earliest end time greedily to fit the most number of interval. The interval with early start might be very long and incompatible with many intervals. But if we choose the interval that ends early, we'll have more space left to accommodate more intervals. Hope it helps.
 
 **Common Strategies**
 1. Can I use a Hashset or a HashMap to store values that you want to find?
