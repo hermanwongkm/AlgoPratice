@@ -49,3 +49,31 @@ class Solution {
         }
     }
 }
+
+/**
+ * @param {number[][]} intervals
+ * @return {number[][]}
+ */
+var merge = function(intervals) {
+    let ans = [];
+    if(intervals.length === 0){
+        return ans;
+    }
+    intervals.sort((a,b) => a[0] - b[0]); //This is sorting by first column
+    let currInterval = intervals[0];
+    for(let i = 1; i < intervals.length; i++){
+        //Since it is sorted, the first start time is always samller
+        if(intervals[i][0] <= currInterval[1]){
+            //if the next interval start time is less than your curr end it means overlap
+            //So now, you will choose the longer end time
+            currInterval[1] = Math.max(intervals[i][1], currInterval[1]);
+        }
+        else{ //So if it is not, i will start a new interval
+            ans.push(currInterval);
+            currInterval = intervals[i];
+        }
+    }
+    ans.push(currInterval); //This is for the last interval which is not added
+    return ans;
+};
+
