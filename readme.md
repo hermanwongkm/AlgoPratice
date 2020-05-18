@@ -15,9 +15,15 @@ Code: [Jump Game](./[Array]JumpGame.js)
 
 ---
 
-Question: Remove duplicates from sorted array
+Question 2
 
-Method: Keep a pointer of what the position you can overwrite, and use a loop to iterate through. Thus, reducing time complexity by shifting each value at most only once.
+*Remove duplicates from sorted array without using additional space*
+
+Solution: Keep a pointer of what the position you can overwrite (In this case start with overwrite = 0 and i = 1). Use a loop to iterate through and compare against indexToOverwrite. If it is the same, if it is a different number, overwrite and increment overwriteIndex.
+
+Code: [Remove Duplicate in Sorted Array](./[Array]Removeduplicates.js)
+
+---
 
 **Getting the next largest value**
 
