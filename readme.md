@@ -5,6 +5,10 @@
 
 **Array**
 
+Question: Find out if you are able to reach the end of the the array, where each index represent maximum value you can advance.
+Solution: Loop through the whole array and keep track of the maximum index you can advance to. Then check if it is the last index.
+Code: [I'm a relative reference to a repository file](./[Array] Jump Game.java)
+
 Question: Remove duplicates from sorted array
 
 Method: Keep a pointer of what the position you can overwrite, and use a loop to iterate through. Thus, reducing time complexity by shifting each value at most only once.
