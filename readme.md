@@ -7,7 +7,7 @@
 ---
 Question 1
 
-Find out if you are able to reach the end of the the array, where each index represent maximum value you can advance.
+*Find out if you are able to reach the end of the the array, where each index represent maximum value you can advance.*
 
 Solution: Loop through the whole array and keep track of the maximum index you can advance to. Then check if it is the last index.
 
