@@ -1,6 +1,11 @@
 ###  Common Methods
 
 #### Arrays
+
+Common array methods
+1. Keep track of the lowest/highest value so far. Use this to compare against or as an answer.
+2. Have an index called indexToOverwrite so you can do inplace overwriting.
+
 ---
 Question 1
 
@@ -63,7 +68,6 @@ Method: Have a outer loop that loops through everything, but have a while loop i
 2. Can I sort it?
 3. Can I use sliding window?
 4. Can I use 2 pointers? Sometimes you can fix a third pointer and move the other 2 pointers
-5. Can I keep track of the minimum and maximum value and do some computations?
 6. Can I attack it from the front and end and do some sort of computations?
 7. Can I use kadane Algorithm and keep track of maximum subarray? Think of contious subarray as a graph, and you are slowly adding it up
 8. Can I write values from the back of the array or do overwriting?
@@ -72,7 +76,6 @@ Method: Have a outer loop that loops through everything, but have a while loop i
 
 1. Use modulus to shift the array. 
 2. The first thing when looking at arrays I always ask is, “does order matter?”. A surprising number of array problems can be optimised and solved by firstly sorting the array.
-3. Keep track of the lowest/highest value so far and compare against it as you go on. Updating when necessary.
 4. Keep track of the maximum subarray by taking Max(max + A[i], A[i]).
 5. Use seperate array to store highest/lowest value so far before this index.
 
@@ -111,9 +114,6 @@ This is also known as the Kadane algorithm and you can loop it backwards to calc
 
 Whereas, if you loop from the front, it is calculating ending with index i. 
 
-**Stack Method**
-
-Use a stack to solve the problem. Matching brackets. 
 
 **Leader Method**
 This method involves finding an element in an array who occur more than n/2. 
