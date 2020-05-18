@@ -1,6 +1,3 @@
-### This repo consists is an archival of all solutions done on various websites such as leetcode.
-
-
 ###  Common Methods
 
 #### Arrays
