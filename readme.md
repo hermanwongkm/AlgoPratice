@@ -9,7 +9,7 @@ Question: Find out if you are able to reach the end of the the array, where each
 
 Solution: Loop through the whole array and keep track of the maximum index you can advance to. Then check if it is the last index.
 
-Code: [I'm a relative reference to a repository file](./[Array] Jump Game)
+Code: [I'm a relative reference to a repository file](./[Array]JumpGame)
 
 Question: Remove duplicates from sorted array
 
