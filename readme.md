@@ -101,6 +101,31 @@ Solution: Perform a cyclic rotation. You will have 2 loops. The outer for loop w
 Code: [Rotate 1D Array](./[Array]ArrayRotation.js)
 
 ---
+Question 8
+
+*Longest subarray with distinct element*
+
+Solution: Use a hashtable to store the most recent occurance of the element. If we meet this element again, you use this value to minus the startIndex and check if it is longer. Then set that index as the new start index. 
+
+Solution: Another method is that you can use a second pointer, and slowly move it forward when you see a character you seen before.
+
+Code: [Longest distinct substring with hashmap](./[Array]LongestDistinctSubstring.js)
+
+Code: [Longest distinct substring without hashmap](./[SlidingWindow]LongestDistinctSubstring.java )
+
+
+---
+
+Question 9
+
+*Given an unsorted array of integers, find the length of the longest consecutive elements sequence, not in terms of adjacent index*
+
+Solution: Store everything inside a hashset. Now, for each value, you will slowly -1 each time, and remove it from the set if it exist. If it does not, break and do an increment. The range from highest to lowest is your length of elements that are adjacent to each other.
+
+Code: [Longest Consequentive in a array (not adjacent)](./[Array]LongestConsequentiveSequence.js)
+
+
+---
 
 ## Sorting
 
