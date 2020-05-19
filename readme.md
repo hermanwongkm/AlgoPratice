@@ -6,9 +6,11 @@ Common array methods
 1. Keep track of the lowest/highest value so far. Use this to compare against or as an answer. (Q1,Q3)
 2. Have an index called indexToOverwrite so you can do inplace overwriting. (Q2)
 3. Use 2 pass, one forward and one backwards to do various computations. (Q3)
+4. Finding the next larger number involves finding a increasing subsequence, and doing a swap. (Q4)
 
 Other unusual array questions
 1. Sieve of Eratosthenes (Return all prime between 1 and the given integer k) - Have an array of size k all set to true initially. For every number that is a prime, we add it to ans, then set false to all of its multiple using another loop. e.g. i = i + 2 in the loop. Then you use this boolean array to check if it is prime or not. The case from 1-9 will set all its multiples to false. 
+2. Reservoir sampling - It is a randomized sampling technique for endless data. It decreases the probability as you work your way towards the end of the data.
 
 ---
 Question 1
@@ -57,7 +59,27 @@ Solution:
 
 3. Now, the subsequence may not be the smallest. Since the number were increasing, we can simply reverse it so that it will be the smallest possible value. 
 
-Code: [Next permutation](./[Array]NextPermutation.js)
+Code: [Next Permutation](./[Array]NextPermutation.js)
+
+---
+
+Question 5 (2D Matrix)
+
+*Spiral Matrix*
+
+Solution: You will generally have 4 loops. 1 to go across, 1 to go down, 1 to go left and last to go up. Everytime you finish and outer layer, you will increment and decrement the "matrix size" to move to the next layer.
+
+Code: [Spiral Matrix](./[Array]SpiralMatrix.js)
+
+---
+
+Question 6 (2D Matrix)
+
+*Rotate 2D array*
+
+Solution: Perform a inplace rotation layer by layer using a 4 way swap.
+
+Code: [Rotate 2D Matrix](./[Array]RotateImage.js)
 
 ---
 
