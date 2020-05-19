@@ -13,6 +13,7 @@ Common array methods
 4. Finding the next larger number involves finding a increasing subsequence, and doing a swap. (Q4)
 5. Perform a cyclic rotation when doing swapping (Q7)
 6. Do a forward pass and remove and values not needed, populate the array backwards might be able to solve some questions.
+7. Can sorting help? If yes, skip to sorting section.
 
 Other unusual array questions
 1. Sieve of Eratosthenes (Return all prime between 1 and the given integer k) - Have an array of size k all set to true initially. For every number that is a prime, we add it to ans, then set false to all of its multiple using another loop. e.g. i = i + 2 in the loop. Then you use this boolean array to check if it is prime or not. The case from 1-9 will set all its multiples to false. 
@@ -98,6 +99,46 @@ Solution: Perform a cyclic rotation. You will have 2 loops. The outer for loop w
 Code: [Rotate 1D Array](./[Array]ArrayRotation.js)
 
 ---
+
+## Sorting
+
+Common sorting methods
+1. 1 forward pass and 1 backward pass using "quicksort". (Q1)
+2. Make use of the sorted property of the array and use 2 pointers for each array, and slowly traverse doing computation. (Q2)
+3. Fill up the array from the back making use of the sorted property.
+---
+
+Question 1
+
+*Dutch Flag problem - Sort them in-place so that objects of the same color are adjacent*
+
+Solution: Have 2 pass of "quickSort". The first forward pass will sort everything less than 1. The second backwards pass will sort everything greater than 1.
+
+Code: [Dutch Flag](./[Sorting]DutchFlag.java)
+
+---
+
+Question 2
+
+*Intersection of an array*
+
+Solution: Since the array is sorted, we can have a pointer for each of array, and increment it when one of it is smaller than the other. Else we add it to ans.
+
+Code: [Intersection of Arrays](./[Sorting]IntersectionOfArray.java)
+
+---
+
+Question 3
+
+*Merge 2 sorted array*
+
+Solution: We take advantage of the sorted property by filling up the nums1 array from the back. Note that we will never overwrite an entry in the first array that has not already been processed. The reason is that even if every entry of the second array is larger than each element of the first array, all elements of the second array will fill up indices m to m + n - 1 inclusive, which does not conflict with entries stored in the first array.
+
+Code: [Merge 2 sorted arrays](./[Sorting]Merge2SortedArray.java)
+
+---
+
+
 ## Searching
 
 Common Searching methods
@@ -153,46 +194,6 @@ Solution:
 7. Discard either the left or right side depending on what index this value is.
 
 Code: [Quickselect]([Search]QuickSelectFindKthLargestElement.js)
-
-## Sorting
-
-Common sorting methods
-1. 1 forward pass and 1 backward pass using "quicksort". (Q1)
-2. Make use of the sorted property of the array and use 2 pointers for each array, and slowly traverse doing computation. (Q2)
----
-
-Question 1
-
-*Dutch Flag problem - Sort them in-place so that objects of the same color are adjacent*
-
-Solution: Have 2 pass of "quickSort". The first forward pass will sort everything less than 1. The second backwards pass will sort everything greater than 1.
-
-Code: [Dutch Flag](./[Sorting]DutchFlag.java)
-
----
-
-Question 2
-
-*Intersection of an array*
-
-Solution: Since the array is sorted, we can have a pointer for each of array, and increment it when one of it is smaller than the other. Else we add it to ans.
-
-Code: [Intersection of Arrays](./[Sorting]IntersectionOfArray.java)
-
----
-
-Question 3
-
-*Merge 2 sorted array*
-
-Solution: We take advantage of the sorted property by filling up the nums1 array from the back. Note that we will never overwrite an entry in the first array that has not already been processed. The reason is that even if every entry of the second array is larger than each element of the first array, all elements of the second array will fill up indices m to m + n - 1 inclusive, which does not conflict with entries stored in the first array.
-
-Code: [Merge 2 sorted arrays](./[Sorting]Merge2SortedArray.java)
-
----
-
-
-
 
 **Understanding binary tree traversal**
 
