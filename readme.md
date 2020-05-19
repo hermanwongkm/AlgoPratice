@@ -195,6 +195,25 @@ Solution:
 
 Code: [Quickselect]([Search]QuickSelectFindKthLargestElement.js)
 
+---
+
+## Binary Tree
+
+Common sorting methods
+1. 
+
+---
+
+Question 1
+
+*Invert Binary Tree*
+
+Solution: There are 2 approaches. Top down or bottom up. In the top down approach, you can perform the swap, and then continue. In the bottom up approach, you perform the recursion then do the assignment.
+
+Code: [Invert Binary Tree](./[BinaryTree]InvertBinaryTree.java)
+
+---
+
 **Understanding binary tree traversal**
 
 1. When you see pre/post/in order traversal. Think of it as refer to the node itself. Thus, pre order means n l r while inorder means lnr. These are just various method of traversing the tree.
