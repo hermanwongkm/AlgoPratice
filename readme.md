@@ -7,6 +7,8 @@ Common array methods
 2. Have an index called indexToOverwrite so you can do inplace overwriting. (Q2)
 3. Use 2 pass, one forward and one backwards to do various computations. (Q3)
 4. Finding the next larger number involves finding a increasing subsequence, and doing a swap. (Q4)
+5. Perform a cyclic rotation when doing swapping (Q7)
+6. Do a forward pass and remove and values not needed, populate the array backwards might be able to solve some questions.
 
 Other unusual array questions
 1. Sieve of Eratosthenes (Return all prime between 1 and the given integer k) - Have an array of size k all set to true initially. For every number that is a prime, we add it to ans, then set false to all of its multiple using another loop. e.g. i = i + 2 in the loop. Then you use this boolean array to check if it is prime or not. The case from 1-9 will set all its multiples to false. 
@@ -108,18 +110,6 @@ Solution: Have 2 pass of "quickSort". The first forward pass will sort everythin
 Code: [Dutch Flag](./[Sorting]DutchFlag.java)
 
 ---
-
-**Getting the next largest value**
-
-Question: Find the next largest value 
-
-Method: Find the point until it stops being strictly increasing. Swap this value with a value in that section that is the next greater value than this. Reverse the whole section.
-
-**Array Cyclic rotation**
-
-Question:Problems that can be solved using cyclic rotation
-
-Method: Have a outer loop that loops through everything, but have a while loop inside that will try to complete a cycle. Break the outer loop when everything is done.
 
 **Understanding binary tree traversal**
 
