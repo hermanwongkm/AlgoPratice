@@ -1,6 +1,6 @@
-###  Common Methods
+#  Common Methods
 
-#### Arrays
+## Arrays
 
 Common array methods
 1. Keep track of the lowest/highest value so far. Use this to compare against or as an answer. (Q1,Q3)
@@ -94,8 +94,37 @@ Solution: Perform a cyclic rotation. You will have 2 loops. The outer for loop w
 Code: [Rotate 1D Array](./[Array]ArrayRotation.js)
 
 ---
+## Searching
 
-#### Sorting
+Common Searching methods
+1. Use binary search. You can make use of the sorted order to dispose of values you do not need/do not meet certain conditions.
+
+---
+
+Question 1
+
+*Find first and last position of element*
+
+Solution: Perform binary search. 
+
+Code: [First and Last Position of Element](./[Search]FindFirstAndLastPositionOfElement.js)
+
+---
+
+
+Question 2
+
+*Find in a sorted array where its entry is equals to its index*
+
+Solution: Perform binary search. This is based on the principle of that the difference between an entry and its index increases by at least1 as we iterate through A. Observe that if A[j] > j, then no entry after j can satisfy the given criterion. This is because each element in the array is at least 1 greater than the previous element. For the same reason, if A[j] < j, no entry before j can satisfy the given criterion.
+
+Code: [Search in Sorted Array Where Entry Equals Index](./[Search]SearchSortedArrayEntryEqualsIndex.js)
+
+---
+
+
+
+## Sorting
 
 Common sorting methods
 1. 1 forward pass and 1 backward pass using "quicksort"
