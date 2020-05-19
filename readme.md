@@ -1,4 +1,8 @@
-#  Common Methods
+#  Table of Content
+
+1. Arrays
+2. Searching
+3. Sorting
 
 ## Arrays
 
@@ -99,6 +103,7 @@ Code: [Rotate 1D Array](./[Array]ArrayRotation.js)
 Common Searching methods
 1. Use binary search. Note, use int mid = start + (end - start)/2;  to avoid overflow. You can make use of the sorted order to dispose of values you do not need/do not meet certain conditions. (Q1,Q2)
 2. Make use of the sorted property in a 2D array, and reduce either column or row.
+3. Use quickselect
 
 ---
 
@@ -133,9 +138,21 @@ Code: [Search in Sorted 2D array](./[Search]SearchIn2DArray.js)
 
 ---
 
+Question 4
 
+*Find the kth largest element in the array*
 
+Solution: 
+1. Create a swap function. 
+2. Use the end as a pivot point.
+3. Have another variable called anythingBeforeThisIsLess, which itself is self explainatory.
+4. If the value is less than pivot value, you swap with this index and increment this pointer.
+4.1. You can do this swapping as the for loop with naturally increment it, and the swapped value is still at the right partition.
+5. Else, do nothing, because it means it is greater and it is also infront of this pivot.
+6 Swap the pivot point over.
+7. Discard either the left or right side depending on what index this value is.
 
+Code: [Quickselect]([Search]QuickSelectFindKthLargestElement.js)
 
 ## Sorting
 
