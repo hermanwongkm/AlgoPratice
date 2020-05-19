@@ -27,6 +27,18 @@ Code: [Remove Duplicate in Sorted Array](./[Array]Removeduplicates.js)
 
 ---
 
+Question 3
+
+*Best time to buy and sell a stock Once/Twice*
+
+Solution (Once): Keep track of the minimum stock price, and loop through the array. Just find the maximum possible difference.
+
+Solution (Twice): 
+
+Code: [Best Time to Buy and Sell a Stock Once](./[Array]BestTimeToBuyStockOnce.java)
+
+---
+
 **Getting the next largest value**
 
 Question: Find the next largest value 
