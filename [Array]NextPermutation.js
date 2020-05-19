@@ -44,7 +44,6 @@ var nextPermutation = function(nums) {
     }
     //Now after you swapped them, you need to reverse the value from the swap section
     reverse(nums, i + 1);
-    console.log(nums);
     return nums;
 };
 
