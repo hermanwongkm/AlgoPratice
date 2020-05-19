@@ -3,8 +3,12 @@
 #### Arrays
 
 Common array methods
-1. Keep track of the lowest/highest value so far. Use this to compare against or as an answer.
-2. Have an index called indexToOverwrite so you can do inplace overwriting.
+1. Keep track of the lowest/highest value so far. Use this to compare against or as an answer. (Q1,Q3)
+2. Have an index called indexToOverwrite so you can do inplace overwriting. (Q2)
+3. Use 2 pass, one forward and one backwards to do various computations. (Q3)
+
+Other unusual array questions
+1. Sieve of Eratosthenes (Return all prime between 1 and the given integer k) - Have an array of size k all set to true initially. For every number that is a prime, we add it to ans, then set false to all of its multiple using another loop. e.g. i = i + 2 in the loop. Then you use this boolean array to check if it is prime or not. The case from 1-9 will set all its multiples to false. 
 
 ---
 Question 1
@@ -33,9 +37,10 @@ Question 3
 
 Solution (Once): Keep track of the minimum stock price, and loop through the array. Just find the maximum possible difference.
 
-Solution (Twice): 
+Solution (Twice): Keep track of the maximum profit you can get in the first pass and store it in an array. Then do a backwards pass and add the current profit to the maximum profit possible from the previous array.
 
 Code: [Best Time to Buy and Sell a Stock Once](./[Array]BestTimeToBuyStockOnce.java)
+Code: [Best Time to Buy and Sell a Stock Twice](./[Array]BestTimeToBuyStockTwice.js)
 
 ---
 
