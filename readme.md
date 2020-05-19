@@ -157,7 +157,8 @@ Code: [Quickselect]([Search]QuickSelectFindKthLargestElement.js)
 ## Sorting
 
 Common sorting methods
-1. 1 forward pass and 1 backward pass using "quicksort"
+1. 1 forward pass and 1 backward pass using "quicksort". (Q1)
+2. Make use of the sorted property of the array and use 2 pointers for each array, and slowly traverse doing computation. (Q2)
 ---
 
 Question 1
@@ -170,6 +171,29 @@ Code: [Dutch Flag](./[Sorting]DutchFlag.java)
 
 ---
 
+Question 2
+
+*Intersection of an array*
+
+Solution: Since the array is sorted, we can have a pointer for each of array, and increment it when one of it is smaller than the other. Else we add it to ans.
+
+Code: [Intersection of Arrays](./[Sorting]IntersectionOfArray.java)
+
+---
+
+Question 3
+
+*Merge 2 sorted array*
+
+Solution: We take advantage of the sorted property by filling up the nums1 array from the back. Note that we will never overwrite an entry in the first array that has not already been processed. The reason is that even if every entry of the second array is larger than each element of the first array, all elements of the second array will fill up indices m to m + n - 1 inclusive, which does not conflict with entries stored in the first array.
+
+Code: [Merge 2 sorted arrays](./[Sorting]Merge2SortedArray.java)
+
+---
+
+
+
+
 **Understanding binary tree traversal**
 
 1. When you see pre/post/in order traversal. Think of it as refer to the node itself. Thus, pre order means n l r while inorder means lnr. These are just various method of traversing the tree.
@@ -178,10 +202,6 @@ Code: [Dutch Flag](./[Sorting]DutchFlag.java)
 1. Replace and remove: replace all As with Ds and all delete all Bs. The idea is count the required space, which is array + 2As and delete all the Bs. This is done first by a forward iteration, Then we do a backwards iteration. Filling up the array backwards.
 2. Reverse a string: The solution is to first, reverse the entire string. So now. What is messed up is that each word is individually reversed. However, each word has the correct length. So now you just have to reverse individual words.
 
-**Solving sorted array questions**
-1. Iterate both pointers at the same time. These are problems such as find *intersection of array*
-2. Fill up the array from the back. This is good for sorted array as if it is sorted, you'll not touch/overwrite the front of that array unnecessarily. These are problems such as *merge 2 sorted array*
-
 **Solving interval questions**
 1. *Question on number of concurrent events running* Sort the arrays by both the starting and ending point. Then, if it is starting, you will add to count. If it is a ending, you can minus. This will give you the number of concurrent events running.
 2. (*Merge intervals*) Sort the array by start time, if the next start time is within the current end time, it overlaps. 
@@ -189,7 +209,6 @@ Code: [Dutch Flag](./[Sorting]DutchFlag.java)
 
 **Common Strategies**
 1. Can I use a Hashset or a HashMap to store values that you want to find?
-2. Can I sort it?
 3. Can I use sliding window?
 4. Can I use 2 pointers? Sometimes you can fix a third pointer and move the other 2 pointers
 6. Can I attack it from the front and end and do some sort of computations?
