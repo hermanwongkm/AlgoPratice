@@ -83,6 +83,16 @@ Code: [Rotate 2D Matrix](./[Array]RotateImage.js)
 
 ---
 
+Question 7 
+
+*Rotate 1D array*
+
+Solution: Perform a cyclic rotation. You will have 2 loops. The outer for loop will just go through all the indexes. The second while loop, will perform the cyclic rotation until you return to the original position again. You may have like certain condition to check if you finish everything or not.
+
+Code: [Rotate 1D Array](./[Array]ArrayRotation.js)
+
+---
+
 #### Sorting
 
 Common sorting methods
