@@ -1,10 +1,9 @@
 /*
-This assessment is to convert numbers to words (Similar to writing on a cheque book)
-  Example:
-  Input: 123456
+Convert number to words
+ 123456
   Output: one hundred twenty three thousand four hundred fifty six
 
-  The range of the input will be within 0 to 999 999 ONLY
+  0 to 999 999 ONLY
 */
 
 const convert = input => {
