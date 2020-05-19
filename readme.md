@@ -97,7 +97,8 @@ Code: [Rotate 1D Array](./[Array]ArrayRotation.js)
 ## Searching
 
 Common Searching methods
-1. Use binary search. You can make use of the sorted order to dispose of values you do not need/do not meet certain conditions.
+1. Use binary search. Note, use int mid = start + (end - start)/2;  to avoid overflow. You can make use of the sorted order to dispose of values you do not need/do not meet certain conditions. (Q1,Q2)
+2. Make use of the sorted property in a 2D array, and reduce either column or row.
 
 ---
 
@@ -121,6 +122,18 @@ Solution: Perform binary search. This is based on the principle of that the diff
 Code: [Search in Sorted Array Where Entry Equals Index](./[Search]SearchSortedArrayEntryEqualsIndex.js)
 
 ---
+
+Question 3
+
+*Search in a sorted 2D array*
+
+Solution: The idea is to either reduce the row or column with every pass. For every pass, look at the top right corner, if it is less than the top right corner, the entire column will be invalid as it is all greater than the value. Else, if it is greater, the entire row will be invalid as the entire row itself will be smaller than this value.
+
+Code: [Search in Sorted 2D array](./[Search]SearchIn2DArray.js)
+
+---
+
+
 
 
 
@@ -147,13 +160,6 @@ Code: [Dutch Flag](./[Sorting]DutchFlag.java)
 **Common String problems**
 1. Replace and remove: replace all As with Ds and all delete all Bs. The idea is count the required space, which is array + 2As and delete all the Bs. This is done first by a forward iteration, Then we do a backwards iteration. Filling up the array backwards.
 2. Reverse a string: The solution is to first, reverse the entire string. So now. What is messed up is that each word is individually reversed. However, each word has the correct length. So now you just have to reverse individual words.
-
-**Binary Search**
-1. You can use binary search when you notice you can remove large chunk of numbers
-2. For example, finding the largest integer who's square is less than or equal to a input. 
-
-**Other forms of search**
-1. Searching in a sorted 2D matrix: Solution: Starting from right corner, reduce either row or column, as the entire row will be less than target and entire column will be larger than target.
 
 **Solving sorted array questions**
 1. Iterate both pointers at the same time. These are problems such as find *intersection of array*
@@ -220,13 +226,6 @@ Whereas, if you loop from the front, it is calculating ending with index i.
 This method involves finding an element in an array who occur more than n/2. 
 This is based on the idea that there can only be one leader even if you split the array because no matter what it will occupy at least half. 
 You can maintain a virtual stack, just keep track of the last value as anything below that will be the same. And just pop off any values that are not equals the stack value. 
-
-**Binary Search Method**
-
-This method invovles using binary search to search for the value that you want. It can be anything related to the problem. You use this value to then loop through another function to check if this value is possible or not. 
-
-1.Use   int mid = start + (end - start)/2;  to avoid overflow
-2. only do mid + 1 and mid -1, if you are searching for a value, as you will have that checking if mid is the value condition. Thus, only remove this value when you are definitely sure. E.g. refer to search for minimum value.
 
 **Others**
 
