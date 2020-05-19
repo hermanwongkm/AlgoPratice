@@ -3,6 +3,8 @@
 1. Arrays
 2. Searching
 3. Sorting
+4. Binary Tree
+5. Stack
 
 ## Arrays
 
@@ -199,8 +201,9 @@ Code: [Quickselect]([Search]QuickSelectFindKthLargestElement.js)
 
 ## Binary Tree
 
-Common sorting methods
-1. 
+Common binary tree methods
+1. When you see pre/post/in order traversal. Think of it as refer to the node itself. Thus, pre order means n l r while inorder means lnr. These are just various method of traversing the tree.
+2. Other types of traversals are DFS and BFS. BFS using a queue, and DFS uses a stack.
 
 ---
 
@@ -214,9 +217,22 @@ Code: [Invert Binary Tree](./[BinaryTree]InvertBinaryTree.java)
 
 ---
 
-**Understanding binary tree traversal**
+## Stack
 
-1. When you see pre/post/in order traversal. Think of it as refer to the node itself. Thus, pre order means n l r while inorder means lnr. These are just various method of traversing the tree.
+Common stack methods
+1. 
+
+---
+
+Question 1
+
+*Matching Brackets*
+
+Solution:  each right parenthesis must match the closest left parenthesis to its left. Therefore, starting from the left, every time we see a left parenthesis, we store it. Each time we see a right parenthesis, we match it with a stored left parenthesis.
+
+Code: [Matching brackets](./[Stack]MatchingBrackets.java)
+
+---
 
 **Common String problems**
 1. Replace and remove: replace all As with Ds and all delete all Bs. The idea is count the required space, which is array + 2As and delete all the Bs. This is done first by a forward iteration, Then we do a backwards iteration. Filling up the array backwards.
