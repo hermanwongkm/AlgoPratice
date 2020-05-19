@@ -40,7 +40,40 @@ Solution (Once): Keep track of the minimum stock price, and loop through the arr
 Solution (Twice): Keep track of the maximum profit you can get in the first pass and store it in an array. Then do a backwards pass and add the current profit to the maximum profit possible from the previous array.
 
 Code: [Best Time to Buy and Sell a Stock Once](./[Array]BestTimeToBuyStockOnce.java)
+
 Code: [Best Time to Buy and Sell a Stock Twice](./[Array]BestTimeToBuyStockTwice.js)
+
+---
+
+Question 4
+
+*Next greater permutation/number*
+
+Solution:
+
+1. We want to increase the permutation as little as possible, like a car odometer. We begin by looking from right to left, a increasing subsequence. e.g. xxxk5430. This, is also the largest possible value and thus, cannot simply modify this to increase it further. 
+
+2. Then, we take the value, k, just before this subsequence. This value k, will definitely be smaller than some value in the subsequence. e.g. 1. Remember that our goal, is to increase our entire number. This can be done by swapping k, with a value larger than k to increase the entire number. Thus, now, you will find the next larger element greater than k in the subsequence and swap it with k.
+
+3. Now, the subsequence may not be the smallest. Since the number were increasing, we can simply reverse it so that it will be the smallest possible value. 
+
+Code: [Next permutation](./[Array]NextPermutation.js)
+
+---
+
+#### Sorting
+
+Common sorting methods
+1. 1 forward pass and 1 backward pass using "quicksort"
+---
+
+Question 1
+
+*Dutch Flag problem - Sort them in-place so that objects of the same color are adjacent*
+
+Solution: Have 2 pass of "quickSort". The first forward pass will sort everything less than 1. The second backwards pass will sort everything greater than 1.
+
+Code: [Dutch Flag](./[Sorting]DutchFlag.java)
 
 ---
 
