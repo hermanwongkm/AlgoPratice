@@ -5,6 +5,7 @@
 3. Sorting
 4. Binary Tree
 5. Stack
+6. String
 
 ## Arrays
 
@@ -256,6 +257,24 @@ Question 1
 Solution:  each right parenthesis must match the closest left parenthesis to its left. Therefore, starting from the left, every time we see a left parenthesis, we store it. Each time we see a right parenthesis, we match it with a stored left parenthesis.
 
 Code: [Matching brackets](./[Stack]MatchingBrackets.java)
+
+---
+
+
+## String
+
+Common String methods
+1. If you need to do anagrams for strings, sort the string and store it in the hashmap. 
+
+---
+
+Question 1
+
+*Delete word if previous word is a anagram*
+
+Solution: The important idea is the sort the string, and store it as a key in the hashset. This way, you can just do typical checking. 
+
+Code: [Fun With Anagram](./[String]FunWithAnagram.java)
 
 ---
 
