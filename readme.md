@@ -7,6 +7,9 @@
 5. Stack
 6. String
 
+Others
+1. SQL/Database design
+
 ## Arrays
 
 Common array methods
@@ -349,3 +352,23 @@ You can maintain a virtual stack, just keep track of the last value as anything 
 2) The only way to get a lower average is to encounter a number less than the current average
 3) Maximum slice of smallest slice is either 2 or 3.
 4) Using a priority queue
+
+
+## Database Design
+
+*One to many relationship*
+
+To establish a one-to-many relationship, the primary key of table A (the "one" table) must be the foreign key of table B (the "many" table).
+
+Example: A `teacher` can have many `classes`
+teachers: teacher_id, first_name, last_name # the "one" side
+classes:  class_id, class_name, teacher_id  # the "many" side will use the teacher_id as the foreign key.
+
+*Many to many relationship*
+
+To establish a many-to-many relationship, create a third/junction table which will have the primary keys of both tables.
+
+Example: A `student` can have many `classes`, and a `class` can have many teachers.
+student: student_id, first_name, last_name
+classes: class_id, name, teacher_id
+student_classes: class_id, student_id     # the junction table will consist of both the primary key of the table.
