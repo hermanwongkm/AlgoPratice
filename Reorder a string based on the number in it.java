@@ -1,5 +1,6 @@
-Reorder the string given the number in its string.
-e.g. thi1s i1s a4 sentenc2e.
+//Reorder the string given the number in its string.
+//e.g. thi1s i1s a4 sentenc2e.
+//Note that instead of using a hashmap, I can insert it directly into the array itself. 
 
 'use strict';
 
