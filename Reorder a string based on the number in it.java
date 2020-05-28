@@ -1,3 +1,6 @@
+Reorder the string given the number in its string.
+e.g. thi1s i1s a4 sentenc2e.
+
 'use strict';
 
 const fs = require('fs');
