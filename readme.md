@@ -415,3 +415,18 @@ Do not force the class/function to implement unused things.
 *Open-Closed Principle*
 
 If I have to open the JS file your module and make a modification in order to extend it, you’ve failed the open closed principle.
+
+## Deployment
+
+*Continuous integration*
+
+Whenever you push a change to git server, it notifies the CI server, it will take the docker file and combine with your code and create a new image. And automatically deploy to the server itself. Thus, saving time and effort to actually upload the file onto the server.
+
+*Scaling*
+
+Use CDN. Content delivery network helps to reduce server load, by caching static images, so you don't have to hit the server directly. Secondly, it helps to filter malicious traffic. Notice those, `I am not a robot` caption. This is a service offered by cloudflare or CDN providers. This helps to prevent DDOS attack as afterall detecting such things are not a simple task. 
+
+Next, instead of having a server with everything install. E.g. Node.mysql etc. You split it up each to have its own server. You use things like amazon RDS and ECS which will automatically scale for you when necessary. This is after the load balancer passes you all the legitimate requests.
+
+
+
