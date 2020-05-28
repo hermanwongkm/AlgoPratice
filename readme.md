@@ -281,6 +281,31 @@ Solution: The important idea is the sort the string, and store it as a key in th
 Code: [Fun With Anagram](./[String]FunWithAnagram.java)
 
 ---
+## Greedy
+
+Common Greedy Method
+1. A hallmark of a greedy algorithm is to select a particular value, and then it never change the selection.
+
+---
+
+Question 1
+
+*Design an algorithm that takes as input a set of tasks and returns an optimum assignment.*
+
+Question: We want to assign tasks to workers so as to minimize how long it takes before all tasks are completed. For example, if there are 6 tasks whose durations are 5, 2, 1, 6, 4, 4 hours. Each worker must be assigned to 2 task.
+
+Solution: This is a greedy solution where we sort the array. And pair the shortest with the longest,second shortest with the second longest, third shortest with the third longest etc. If the durations are 5, 2, 1, 6, 4, 4, then on sorting we get 1, 2, 4, 4, 5, 6, and the pairings are (1,6), (2,5), and (4,4).
+
+---
+
+Question 2 
+
+*Minimize wait time by reordering task and performing one at a time*
+
+Solution: if the service times are (2,5,1,3), if we schedule in the given order, the total waiting time is0+(2)+(2+5)+(2+5+l) = 17. We notice that, 2 is repeated for all of the entries. Thus, it makes intuitive sense to sort it and have the smallest one first.
+
+Code: [Minimize wait time](./[Greedy]MinimizeWaitTime.java)
+
 
 **Common String problems**
 1. Replace and remove: replace all As with Ds and all delete all Bs. The idea is count the required space, which is array + 2As and delete all the Bs. This is done first by a forward iteration, Then we do a backwards iteration. Filling up the array backwards.
@@ -290,14 +315,6 @@ Code: [Fun With Anagram](./[String]FunWithAnagram.java)
 1. *Question on number of concurrent events running* Sort the arrays by both the starting and ending point. Then, if it is starting, you will add to count. If it is a ending, you can minus. This will give you the number of concurrent events running.
 2. (*Merge intervals*) Sort the array by start time, if the next start time is within the current end time, it overlaps. 
 3. (*Remove overlap*) Sort the array and use the earliest end time greedily to fit the most number of interval. The interval with early start might be very long and incompatible with many intervals. But if we choose the interval that ends early, we'll have more space left to accommodate more intervals. Hope it helps.
-
-**Common Strategies**
-1. Can I use a Hashset or a HashMap to store values that you want to find?
-3. Can I use sliding window?
-4. Can I use 2 pointers? Sometimes you can fix a third pointer and move the other 2 pointers
-6. Can I attack it from the front and end and do some sort of computations?
-7. Can I use kadane Algorithm and keep track of maximum subarray? Think of contious subarray as a graph, and you are slowly adding it up
-8. Can I write values from the back of the array or do overwriting?
  
 **Array Methods**
 
@@ -309,10 +326,6 @@ Code: [Fun With Anagram](./[String]FunWithAnagram.java)
 **Counting Method**
 
 This method involves storing the the value of the first array as an index for a new array.
-
-**Sliding window Method**
-
-This method involves having a starting point and ending point, usually at the start or the end of an array. And then based on some criteria, you move either one of it.
 
 **Prefix Sum Method**
 
@@ -353,34 +366,6 @@ You can maintain a virtual stack, just keep track of the last value as anything 
 2) The only way to get a lower average is to encounter a number less than the current average
 3) Maximum slice of smallest slice is either 2 or 3.
 4) Using a priority queue
-
-
-## Greedy
-
-Common Greedy Method
-1. A hallmark of a greedy algorithm is to select a particular value, and then it never change the selection.
-
----
-
-Question 1
-
-*Design an algorithm that takes as input a set of tasks and returns an optimum assignment.*
-
-Question: We want to assign tasks to workers so as to minimize how long it takes before all tasks are completed. For example, if there are 6 tasks whose durations are 5, 2, 1, 6, 4, 4 hours. Each worker must be assigned to 2 task.
-
-Solution: This is a greedy solution where we sort the array. And pair the shortest with the longest,second shortest with the second longest, third shortest with the third longest etc. If the durations are 5, 2, 1, 6, 4, 4, then on sorting we get 1, 2, 4, 4, 5, 6, and the pairings are (1,6), (2,5), and (4,4).
-
----
-
-Question 2 
-
-*Minimize wait time by reordering task and performing one at a time*
-
-Solution: if the service times are (2,5,1,3), if we schedule in the given order, the total waiting time is0+(2)+(2+5)+(2+5+l) = 17. We notice that, 2 is repeated for all of the entries. Thus, it makes intuitive sense to sort it and have the smallest one first.
-
-Code: [Minimize wait time](./[Greedy]MinimizeWaitTime.java)
-
-
 
 **Common String problems**
 1. Replace and remove: replace all As with Ds and all delete all Bs. The idea is count the required space, which is array + 2As and delete all the Bs. This is done first by a forward iteration, Then we do a backwards iteration. Filling up the array backwards.
