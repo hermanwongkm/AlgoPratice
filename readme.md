@@ -389,3 +389,29 @@ Example: A `student` can have many `classes`, and a `class` can have many teache
 student: student_id, first_name, last_name
 classes: class_id, name, teacher_id
 student_classes: class_id, student_id     # the junction table will consist of both the primary key of the table.
+
+## Database
+
+*Indexes*
+
+Indexes are special lookup tables that the database search engine can use to speed up data retrieval. Simply put, an index is a pointer to data in a table. An index helps to speed up SELECT queries and WHERE clauses, but it slows down data input, with the UPDATE and the INSERT statements.
+
+An index can be used to efficiently find all rows matching some column in your query and then walk through only that subset of the table to find exact matches. If you don't have indexes on any column in the WHERE clause, the SQL server has to walk through the whole table and check every row to see if it matches, which may be a slow operation on big tables.
+
+## Software engineering 
+
+*Singleton Pattern*
+
+`Require` helps you with this. It does not matter how many times you will require this module in your application; it will only exist as a single instance.
+
+*Controllers*
+
+Controller is part of the MVC model. Controllers are functions to get the requested data from the model. 
+
+*Interface Segregation Principle*
+
+Do not force the class/function to implement unused things. 
+
+*Open-Closed Principle*
+
+If I have to open the JS file your module and make a modification in order to extend it, you’ve failed the open closed principle.
