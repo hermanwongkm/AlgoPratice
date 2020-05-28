@@ -6,6 +6,7 @@
 4. Binary Tree
 5. Stack
 6. String
+7. Greedy
 
 Others
 1. SQL/Database design
@@ -353,6 +354,37 @@ You can maintain a virtual stack, just keep track of the last value as anything 
 3) Maximum slice of smallest slice is either 2 or 3.
 4) Using a priority queue
 
+
+## Greedy
+
+Common Greedy Method
+1. A hallmark of a greedy algorithm is to select a particular value, and then it never change the selection.
+
+---
+
+Question 1
+
+*Design an algorithm that takes as input a set of tasks and returns an optimum assignment.*
+
+Question: We want to assign tasks to workers so as to minimize how long it takes before all tasks are completed. For example, if there are 6 tasks whose durations are 5, 2, 1, 6, 4, 4 hours. Each worker must be assigned to 2 task.
+
+Solution: This is a greedy solution where we sort the array. And pair the shortest with the longest,second shortest with the second longest, third shortest with the third longest etc. If the durations are 5, 2, 1, 6, 4, 4, then on sorting we get 1, 2, 4, 4, 5, 6, and the pairings are (1,6), (2,5), and (4,4).
+
+---
+
+Question 2 
+
+*Minimize wait time by reordering task and performing one at a time*
+
+Solution: if the service times are (2,5,1,3), if we schedule in the given order, the total waiting time is0+(2)+(2+5)+(2+5+l) = 17. We notice that, 2 is repeated for all of the entries. Thus, it makes intuitive sense to sort it and have the smallest one first.
+
+Code: [Minimize wait time](./[Greedy]MinimizeWaitTime.java)
+
+
+
+**Common String problems**
+1. Replace and remove: replace all As with Ds and all delete all Bs. The idea is count the required space, which is array + 2As and delete all the Bs. This is done first by a forward iteration, Then we do a backwards iteration. Filling up the array backwards.
+2. Reverse a string: The solution is to first, reverse the entire string. So now. What is messed up is that each word is individually reversed. However, each word has the correct length. So now you just have to reverse individual words.
 
 ## Database Design
 
