@@ -132,6 +132,18 @@ Code: [Longest Consequentive in a array (not adjacent)](./[Array]LongestConseque
 
 ---
 
+
+Question 10
+
+*3 Sum*
+
+Solution: Loop through the array. For each index, based on the sorted property, we will have a pointer at the front and one at the end. If the sum of both of this value is greater than target - sum, this means that we need a smaller number, so we move the right point left. Else we move the left pointer right. 
+
+Code: [3 Sum](./[Array]3Sum.java)
+
+
+---
+
 ## Sorting
 
 Common sorting methods
@@ -305,6 +317,18 @@ Question 2
 Solution: if the service times are (2,5,1,3), if we schedule in the given order, the total waiting time is0+(2)+(2+5)+(2+5+l) = 17. We notice that, 2 is repeated for all of the entries. Thus, it makes intuitive sense to sort it and have the smallest one first.
 
 Code: [Minimize wait time](./[Greedy]MinimizeWaitTime.java)
+
+---
+
+Question 3
+
+*Interval covering problem*
+
+Question: You are given a set of intervals. Your job is to help him minimize the number of visits he makes. In each visit, he can check on all the tasks taking place at the time of the visit. 
+
+Solution: Sort it by end time. Pick the first end time and compare it against the rest. If the start time is before the endtime, we proceed. It means that the choosen endtime will cover it. This is because, it is sorted by end time, thus, the second endtime will definitely be after the current endtime. Thus, if the second start time is later than the current end time, it will be within the interval. e.g. [1,3], [2,4]. 4 will definitely be behind 3. If the second start time 2, is less than the current end time, it means it will happen to until at least end of current end time. 
+
+For the given example, [1,2],[2,3],[3,4],[2,3],[3,4],[4,5], after sorting on right endpoints we get [1,2],[2,3],[2,3],[3,4],[3,4],[4,5], The leftmost right endpoint is 2, which covers the first three intervals. Therefore, we select 2, and as we iterate, we see it covers [1,2],[2,3],[2,3], When we get to [3,4], we select its right endpoint, i.e., 4. This covers [3, 4], [3, 4], [4, 5]. There are no remaining intervals, so (2, 4] is a minimum set of points covering all intervals.
 
 
 **Common String problems**
