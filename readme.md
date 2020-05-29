@@ -297,6 +297,7 @@ Code: [Fun With Anagram](./[String]FunWithAnagram.java)
 
 Common Greedy Method
 1. A hallmark of a greedy algorithm is to select a particular value, and then it never change the selection.
+2. Alot of it invovles sorting.
 
 ---
 
@@ -329,6 +330,18 @@ Question: You are given a set of intervals. Your job is to help him minimize the
 Solution: Sort it by end time. Pick the first end time and compare it against the rest. If the start time is before the endtime, we proceed. It means that the choosen endtime will cover it. This is because, it is sorted by end time, thus, the second endtime will definitely be after the current endtime. Thus, if the second start time is later than the current end time, it will be within the interval. e.g. [1,3], [2,4]. 4 will definitely be behind 3. If the second start time 2, is less than the current end time, it means it will happen to until at least end of current end time. 
 
 For the given example, [1,2],[2,3],[3,4],[2,3],[3,4],[4,5], after sorting on right endpoints we get [1,2],[2,3],[2,3],[3,4],[3,4],[4,5], The leftmost right endpoint is 2, which covers the first three intervals. Therefore, we select 2, and as we iterate, we see it covers [1,2],[2,3],[2,3], When we get to [3,4], we select its right endpoint, i.e., 4. This covers [3, 4], [3, 4], [4, 5]. There are no remaining intervals, so (2, 4] is a minimum set of points covering all intervals.
+
+Question 4
+
+*Majority of element*
+
+Solution:The idea is based on the fact that it will always be half + 1 more than any other element. So you solution is to take the first index element, check if it is the same as the next. If it is, increment count. Else minus. If it hits 0, take this element as the new element. You are slowly taking out non-matching pairs, and what is left, will be the last element which is the majority.
+
+Code: [Majority of Element](./[Greedy]FindMajorityOfElement.js)
+
+---
+
+
 
 
 **Common String problems**
@@ -386,10 +399,8 @@ You can maintain a virtual stack, just keep track of the last value as anything 
 
 **Others**
 
-1) Using map or set to store certain values
-2) The only way to get a lower average is to encounter a number less than the current average
-3) Maximum slice of smallest slice is either 2 or 3.
-4) Using a priority queue
+1) The only way to get a lower average is to encounter a number less than the current average
+2) Maximum slice of smallest slice is either 2 or 3.
 
 **Common String problems**
 1. Replace and remove: replace all As with Ds and all delete all Bs. The idea is count the required space, which is array + 2As and delete all the Bs. This is done first by a forward iteration, Then we do a backwards iteration. Filling up the array backwards.
