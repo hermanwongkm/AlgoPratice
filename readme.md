@@ -21,6 +21,7 @@ Common array methods
 5. Perform a cyclic rotation when doing swapping (Q7)
 6. Do a forward pass and remove and values not needed, populate the array backwards might be able to solve some questions.
 7. Can sorting help? If yes, skip to sorting section.
+8. Keep 2 pointers, 1 in the front, 1 in the back. Sliding window method.
 
 Other unusual array questions
 1. Sieve of Eratosthenes (Return all prime between 1 and the given integer k) - Have an array of size k all set to true initially. For every number that is a prime, we add it to ans, then set false to all of its multiple using another loop. e.g. i = i + 2 in the loop. Then you use this boolean array to check if it is prime or not. The case from 1-9 will set all its multiples to false. 
@@ -143,6 +144,19 @@ Code: [3 Sum](./[Array]3Sum.java)
 
 
 ---
+
+
+Question 11
+
+*Maximum Trapped Water*
+
+Solution: We considerate the widest possible length, which is start and end of index. The idea is now to explore the best way to trade off width for height. You are reducing width, hoping to get a higher height. You will move the shorter index. If it is equal, you can move both inwards, as this is the max you can get with 2 index of the same height. 
+
+Code: [Maximum Trapped Water](./[Array]MaximumTrappedWater.java)
+
+
+---
+
 
 ## Sorting
 
