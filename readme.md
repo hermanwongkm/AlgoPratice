@@ -141,7 +141,7 @@ Question 10
 Solution: Loop through the array. For each index, based on the sorted property, we will have a pointer at the front and one at the end. If the sum of both of this value is greater than target - sum, this means that we need a smaller number, so we move the right point left. Else we move the left pointer right. 
 
 Code: [3 Sum](./[Array]3Sum.java)
-
+Code: [2 Sum](./[Array]2Sums.java)
 
 ---
 
