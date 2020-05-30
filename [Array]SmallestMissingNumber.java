@@ -27,6 +27,38 @@ Write an efficient algorithm for the following assumptions:
         
 **/
 
+//Save the number into their correct respective index and do swapping
+class Solution {
+    public int missingNumber(int[] nums) {
+        if(nums.length == 1 && nums[0] != 0){
+            return 0;
+        }
+        
+        int i = 0;
+        while(i < nums.length){
+            //if number at index number (but shift by 1) not equals to curr number
+            if(nums[i] > 0 && nums[i] <= nums.length && nums[nums[i] -1] != nums[i]){
+                //Perform swap
+                int temp = nums[nums[i] - 1];
+                nums[nums[i] - 1] = nums[i];
+                nums[i] = temp;
+            }
+            else{
+                i++;
+            }
+        }
+
+        for(i = 0; i < nums.length; i++){
+            System.out.println(nums[i]);
+            if(nums[i] != i + 1){
+                return i + 1;
+            }
+        }
+        return 0;
+    }
+}
+
+
 // you can also use imports, for example:
 import java.util.*;
 
