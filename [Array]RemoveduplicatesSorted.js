@@ -20,3 +20,33 @@ var removeDuplicates = function(nums) {
     }
     return indexToOverwrite
 };
+
+//Below is a much slower method, you dont need to keep count, you just check against the previous.
+
+//class Solution {
+    public int removeDuplicates(int[] nums) {
+        if(nums.length <= 0){
+            return 0;
+        }
+        int replace = 0;
+        int prev = nums[0];
+        int count = 0;
+        
+        for(int i = 0; i < nums.length; i++){
+            if(prev == nums[i]){
+                if(count < 2){
+                    nums[replace] = nums[i]; //If its at the start, replace and i will be the same. So i am just replacing it with itself. 
+                    count++;
+                    replace++;
+                }
+            }
+            else{
+                prev = nums[i];
+                nums[replace] = nums[i];
+                count = 1;
+                replace++;
+            }
+        }
+        return replace;
+    }
+}
