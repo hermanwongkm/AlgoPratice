@@ -355,6 +355,17 @@ Code: [Majority of Element](./[Greedy]FindMajorityOfElement.js)
 
 ---
 
+Question 5
+
+*Gas station*
+
+Solution: First, we assume that a answer always exist. We choose starting point 0. If at any point, it reaches below zero, say point x. It means you cannot reach point x from that starting point to x. Why? Imagine, at instead of point 0, you say start with point k which is between 0 and x. Can it reach x? Maybe. However, as it loops back to 0, and want to go to k. Based on the previous part, it means that from 0 to k we used alot of fuel. So, it will not be able to reach k based on that assumption. Thus, the solution is to take the next point.
+
+Code: [Gas Station](./[Greedy]GasStation.java)
+
+---
+
+
 
 
 
