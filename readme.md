@@ -45,7 +45,7 @@ Question 2
 
 Solution: Keep a pointer of what the position you can overwrite (In this case start with overwrite = 0 and i = 1). Use a loop to iterate through and compare against indexToOverwrite. If it is the same, if it is a different number, overwrite and increment overwriteIndex.
 
-Code: [Remove Duplicate in Sorted Array](./[Array]Removeduplicates.js)
+Code: [Remove Duplicate in Sorted Array](./[Array]RemoveduplicatesSorted.js)
 
 ---
 
