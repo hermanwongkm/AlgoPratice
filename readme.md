@@ -22,6 +22,7 @@ Common array methods
 6. Do a forward pass and remove and values not needed, populate the array backwards might be able to solve some questions.
 7. Can sorting help? If yes, skip to sorting section.
 8. Keep 2 pointers, 1 in the front, 1 in the back. Sliding window method.
+9. Save it to their respective index corresponding to the number
 
 Other unusual array questions
 1. Sieve of Eratosthenes (Return all prime between 1 and the given integer k) - Have an array of size k all set to true initially. For every number that is a prime, we add it to ans, then set false to all of its multiple using another loop. e.g. i = i + 2 in the loop. Then you use this boolean array to check if it is prime or not. The case from 1-9 will set all its multiples to false. 
@@ -157,6 +158,16 @@ Code: [Maximum Trapped Water](./[Array]MaximumTrappedWater.java)
 
 ---
 
+Question 12
+
+*Smallest Missing Number*
+
+Solution: Some initial methods are to use a hashtable or sorting to solve the problem. We can save the number to its respective index and perform swap. Then go through the array one more time to see if the number are in their respective position. 
+
+Code: [Small Missing Number](./[Array]SmallestMissingNumber.java)
+
+
+---
 
 ## Sorting
 
@@ -295,7 +306,8 @@ Code: [Matching brackets](./[Stack]MatchingBrackets.java)
 
 Common String methods
 1. If you need to do anagrams for strings, sort the string and store it in the hashmap. 
-
+2. Replace and remove: replace all As with Ds and all delete all Bs. The idea is count the required space, which is array + 2As and delete all the Bs. This is done first by a forward iteration, Then we do a backwards iteration. Filling up the array backwards.
+3. Reverse a string: The solution is to first, reverse the entire string. So now. What is messed up is that each word is individually reversed. However, each word has the correct length. So now you just have to reverse individual words.
 ---
 
 Question 1
@@ -365,25 +377,10 @@ Code: [Gas Station](./[Greedy]GasStation.java)
 
 ---
 
-
-
-
-
-**Common String problems**
-1. Replace and remove: replace all As with Ds and all delete all Bs. The idea is count the required space, which is array + 2As and delete all the Bs. This is done first by a forward iteration, Then we do a backwards iteration. Filling up the array backwards.
-2. Reverse a string: The solution is to first, reverse the entire string. So now. What is messed up is that each word is individually reversed. However, each word has the correct length. So now you just have to reverse individual words.
-
 **Solving interval questions**
 1. *Question on number of concurrent events running* Sort the arrays by both the starting and ending point. Then, if it is starting, you will add to count. If it is a ending, you can minus. This will give you the number of concurrent events running.
 2. (*Merge intervals*) Sort the array by start time, if the next start time is within the current end time, it overlaps. 
 3. (*Remove overlap*) Sort the array and use the earliest end time greedily to fit the most number of interval. The interval with early start might be very long and incompatible with many intervals. But if we choose the interval that ends early, we'll have more space left to accommodate more intervals. Hope it helps.
- 
-**Array Methods**
-
-1. Use modulus to shift the array. 
-2. The first thing when looking at arrays I always ask is, “does order matter?”. A surprising number of array problems can be optimised and solved by firstly sorting the array.
-4. Keep track of the maximum subarray by taking Max(max + A[i], A[i]).
-5. Use seperate array to store highest/lowest value so far before this index.
 
 **Counting Method**
 
@@ -426,10 +423,6 @@ You can maintain a virtual stack, just keep track of the last value as anything 
 
 1) The only way to get a lower average is to encounter a number less than the current average
 2) Maximum slice of smallest slice is either 2 or 3.
-
-**Common String problems**
-1. Replace and remove: replace all As with Ds and all delete all Bs. The idea is count the required space, which is array + 2As and delete all the Bs. This is done first by a forward iteration, Then we do a backwards iteration. Filling up the array backwards.
-2. Reverse a string: The solution is to first, reverse the entire string. So now. What is messed up is that each word is individually reversed. However, each word has the correct length. So now you just have to reverse individual words.
 
 ## Database Design
 
