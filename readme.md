@@ -226,6 +226,16 @@ Code: [Partition Left Right To Be Greater And Less Than](./[Array]PartitionAtGre
 ---
 
 
+Question 18
+
+*Winter Summer*
+
+Solution: Go through the array. You will keep track of the highest for winter temperature so far. If you meet a lower value, means winter is extended. So now, you need to take the highest temperature for winter. Else it means, the temperature is higher. If it continues to be higher all the way, it is summer. 
+Code: [Winter Summer](./[Array]WinterSummer.java)
+
+
+---
+
 ## Sorting
 
 Common sorting methods
