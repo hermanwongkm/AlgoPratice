@@ -24,8 +24,8 @@ rotate 3 steps to the right: [5,6,7,1,2,3,4]
  */
 var rotate = function(nums, k) {
     const rotations = k % nums.length;
-    let count = 0;
-    for(let i = 0; i <= k; i++){
+    let count = 0; //This count will keep track of the number of swaps you made
+    for(let i = 0; i <= k; i++){ //You will never visit the same element twice, because it is a cycle of e.g. 3 3 3 3 or 2 2 2 2.
         if(count === nums.length){
             break;
         }
@@ -38,7 +38,7 @@ var rotate = function(nums, k) {
             nums[currIndex] = prevValue;
             prevValue = temp;
             count++;
-            if(currIndex === i){
+            if(currIndex === i){ //If i go back to where i was before, meaning i made a complete cycle. 
                 flag = false;
             }
         }
