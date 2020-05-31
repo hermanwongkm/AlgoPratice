@@ -142,6 +142,7 @@ Question 10
 Solution: Loop through the array. For each index, based on the sorted property, we will have a pointer at the front and one at the end. If the sum of both of this value is greater than target - sum, this means that we need a smaller number, so we move the right point left. Else we move the left pointer right. 
 
 Code: [3 Sum](./[Array]3Sum.java)
+
 Code: [2 Sum](./[Array]2Sums.java)
 
 ---
@@ -168,6 +169,62 @@ Code: [Small Missing Number](./[Array]SmallestMissingNumber.java)
 
 
 ---
+
+Question 13
+
+*Maximum subarray*
+
+Solution: Loop through the array, for each iteration, you take the max as `prevMax` or previous continious array + current index. The idea is that, if it goes below your max, say even the first index, even if the next one is larger, you can just take the next one instead of including that negative number.
+
+Code: [Maximum subarray](./[Array]MaximumSubarray.java )
+
+
+---
+
+Question 14
+
+*Maximum Contiguous Product*
+
+Solution: The idea to keep track both the minimum (which will definitely be a negative number) and the maximum. Then just keep multiplying for each index. 
+
+Code: [Maximum Contiguous Product](./[Array]MaxProductContiguous.java)
+
+
+---
+
+Question 15
+
+*Find minimum difference between 2 subarray*
+
+Solution: The idea to first get the sum of the entire array. Then you slowly increment `first` which will be the sum from i = 0 to i = x. Then use the sum to minus first and get the second section. Now you can just compare and get the minimum difference.
+
+Code: [Maximum Contiguous Product](./[Array]FindMinAbsDifBetween2Parts.java)
+
+
+---
+
+Question 16
+
+*Get product of all values except itself*
+
+Solution: This question have to be solved without division. First, you will do one pass forward to get the product of all numbers to its left. Thus arr[i] will contain all the products before it. You will start the loop with i = 1. Now, you will do a backwards pass, and this pass will compute all the product to the right of itself. In the same section, you can make it faster by multiplying by the first array to get the answer.
+
+Code: [Product Except Itself](./[Array]ProductExceptItself.java)
+
+
+---
+
+Question 17
+
+*Given an unsorted array of integers. Find an element such that all the elements to its left are smaller and to its right are greater*
+
+Solution: The solution invovles 2 pass. The forward pass, keeps track of the largest number until this point i. Meaning it either use the previous value, or the current value, whichever is greater. Then we do the same for the backwards pass. Finally, you will go through each index and check is it greater than left and less than right.
+
+Code: [Partition Left Right To Be Greater And Less Than](./[Array]PartitionAtGreaterAndLessThanLeftRight.java)
+
+
+---
+
 
 ## Sorting
 
