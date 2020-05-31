@@ -11,7 +11,7 @@ class Solution {
     public int solution(int[] T) {
     //Winter always start at index 0
     //Max temperature in winter so far
-    int maxWinter = T[0];
+    int maxWinter = T[0]; //When it says maxWinter, it means it is the lowest value so far. Dont be mistaken.
     int maxTemp = T[0];
     int ans = 1; 
     for(int i = 0; i < T.length; i++){
