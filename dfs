@@ -1,0 +1,129 @@
+//Wong Kai Min Herman
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner s = new Scanner(System.in); 
+        int maxCount = 0;
+        int id = 0;
+        HashMap<Integer,Integer> mapping = new HashMap();              
+        ArrayList<ArrayList<Integer>> adjacencyList = new ArrayList();
+        
+        Map<Integer,Set<Integer>> map = new HashMap();
+        while (s.hasNextLine()) {
+           String line = s.nextLine();
+            if(line.equals("Q1")){
+            System.out.println(maxCount);
+            } 
+            else if(line.equals("Q2")){
+                int ans = countConnectedGraph(id,adjacencyList);
+                System.out.println(ans -1);
+            }
+            else{
+                String[] numArray = line.split("-");
+                int firstNum = Integer.parseInt(numArray[0]);
+                int secondNum = Integer.parseInt(numArray[1]);
+                
+                for(int i = 0; i < numArray.length; i++){
+                    if(!mapping.containsKey(Integer.parseInt(numArray[i]))){
+                        mapping.put(Integer.parseInt(numArray[i]), id);
+                        id++;
+                        adjacencyList.add(new ArrayList<Integer>());
+                    }
+                }
+                
+                
+                if(map.containsKey(firstNum)){ //I have seen this number before
+                    if(!map.get(firstNum).contains(secondNum)){ //If i paired them before
+                        int index1 = mapping.get(firstNum);
+                        int index2 = mapping.get(secondNum);
+                        adjacencyList.get(index1).add(index2);
+                    }
+                    
+                    map.get(firstNum).add(secondNum);
+                    maxCount = Math.max(maxCount,map.get(firstNum).size());
+                }else{ //I have not seen this number before
+                    Set<Integer> set = new HashSet();
+                    set.add(secondNum);
+                    map.put(firstNum, set);
+                    maxCount = Math.max(maxCount,map.get(firstNum).size());
+                                  
+                //Add to graph
+                    int index1 = mapping.get(firstNum);
+                    int index2 = mapping.get(secondNum);
+                    adjacencyList.get(index1).add(index2);
+                    
+                }
+                
+                if(map.containsKey(secondNum)){
+                        if(!map.get(firstNum).contains(secondNum)){
+                            int index1 = mapping.get(firstNum);
+                            int index2 = mapping.get(secondNum);
+                            adjacencyList.get(index2).add(index1);
+                    }
+                    
+                    map.get(secondNum).add(firstNum);
+                    maxCount = Math.max(maxCount,map.get(secondNum).size());
+                }else{
+                    Set<Integer> set = new HashSet();
+                    set.add(firstNum);
+                    map.put(secondNum, set);
+                    maxCount = Math.max(maxCount,map.get(secondNum).size());
+                    
+                                    //Add to graph
+                    int index1 = mapping.get(firstNum);
+                    int index2 = mapping.get(secondNum);
+                    adjacencyList.get(index2).add(index1);
+                }
+           } 
+    
+        
+        }
+        
+    }
+    
+    public static int countConnectedGraph(int numOfVertices,ArrayList<ArrayList<Integer>> adjacencyList){
+        // for(int i = 0; i < adjacencyList.size(); i++){
+        //     System.out.println("i:"+i);
+        //     for(int j = 0; j < adjacencyList.get(i).size(); j++){
+        //         System.out.print(adjacencyList.get(i).get(j));
+        //     }
+        //     System.out.println("---");
+        // }
+        boolean[] visited = new boolean[numOfVertices];
+        int count = 0;
+        int index;
+        while((index = checkGraphIsVisited(visited)) != -1){
+            dfs(index,adjacencyList,visited);
+            count++;
+        }
+        return count;
+    }
+    
+    public static int checkGraphIsVisited(boolean[] visited){
+            for (int i = 0; i <visited.length ; i++) {
+                if(!visited[i])
+                    return i;
+            }
+            return -1;
+        }
+    
+    public  static void dfs(int start, ArrayList<ArrayList<Integer>> adjacencyList, boolean[] visited){
+        // System.out.println("Start:" + start);
+        visited[start] = true;
+        for(int i = 0; i < adjacencyList.get(start).size(); i++){
+            int destination = adjacencyList.get(start).get(i);
+            // System.out.println("Destination:" + destination);
+            if(!visited[destination]){
+                dfs(destination,adjacencyList,visited);
+            }
+        }
+    } 
+
+}
