@@ -231,10 +231,23 @@ Question 18
 *Winter Summer*
 
 Solution: Go through the array. You will keep track of the highest for winter temperature so far. If you meet a lower value, means winter is extended. So now, you need to take the highest temperature for winter. Else it means, the temperature is higher. If it continues to be higher all the way, it is summer. 
+
 Code: [Winter Summer](./[Array]WinterSummer.java)
 
 
 ---
+
+Question 19
+
+*Find duplicates in array in O(N)*
+
+Solution: We make use of the property that a[i] will be within the size of array. Thus, we take the value and go to the index itself and multiple it by -1 as a flag. If we visit this index again and it is a negative number, it means it is a duplicate. 
+
+Code: [Find All duplicates in O(N)](./[Array]FindDupsInArrayInO(N).java)
+
+
+---
+
 
 ## Sorting
 
