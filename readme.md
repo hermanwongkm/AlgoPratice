@@ -574,6 +574,12 @@ Do not force the class/function to implement unused things.
 
 If I have to open the JS file your module and make a modification in order to extend it, you’ve failed the open closed principle.
 
+*React/Redux*
+
+Use it when:
+1. Need to share between components and not localized to a single component.
+2. Deals with business logic shared with other parts of the applications.
+
 ## Deployment
 
 *Continuous integration*
