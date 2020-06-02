@@ -381,6 +381,17 @@ Code: [Matching brackets](./[Stack]MatchingBrackets.java)
 
 ---
 
+Question 2
+
+*Next warmest*
+
+Solution: You keep the index of array in the stack. Then, you will use it as reference as comparison. In the stack, you will only store strictly increasing temperature.
+
+Code: [Matching brackets](./[Stack]NextWarmest.java)
+
+---
+
+
 
 ## String
 
