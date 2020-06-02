@@ -523,6 +523,20 @@ student: student_id, first_name, last_name
 classes: class_id, name, teacher_id
 student_classes: class_id, student_id     # the junction table will consist of both the primary key of the table.
 
+*Using UUID for primary key*
+
+**Pros**
+
+1. At scale, when you have multiple organizations for example, using a UUID means that you will definitely have one ID unique across ALL database, not just in that one organization. This makes moving data across safe.
+
+2. UUID does not reveal information about your data. E.g. if your employee ID was 12345678 then we know that there is at least that number of employee or so. 
+
+**Cons**
+
+1. When you have your UUID as your primary key, it will be referenced by many foreign keys, thus, it will start to add up in terms of memory. Not just in the database, but during joins and sorts, these keys need to live in the memory.
+
+2. It might be hard to sort UUID or to create clustering index.
+
 ## Database
 
 *Indexes*
