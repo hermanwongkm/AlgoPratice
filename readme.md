@@ -611,6 +611,10 @@ Use it when:
 1. Need to share between components and not localized to a single component.
 2. Deals with business logic shared with other parts of the applications.
 
+What should i put inside?
+
+Simply ask these questions: Is this state important to the rest of the application? Will other parts of the application behave differently based on that state? In many minor cases, that will not be the case. Take a drop down menu: The fact that it's open or closed probably won't have an effect on other parts of the app. So, wiring it up to your store is probably overkill. It's certainly a valid option, but doesn't really net you any benefits. You're better off using this.state and calling it a day.
+
 ## Deployment
 
 *Continuous integration*
