@@ -556,7 +556,7 @@ Indexes are special lookup tables that the database search engine can use to spe
 
 An index can be used to efficiently find all rows matching some column in your query and then walk through only that subset of the table to find exact matches. If you don't have indexes on any column in the WHERE clause, the SQL server has to walk through the whole table and check every row to see if it matches, which may be a slow operation on big tables.
 
-## Software engineering 
+## Software engineering guidelines/principles
 
 *Singleton Pattern*
 
@@ -566,6 +566,10 @@ An index can be used to efficiently find all rows matching some column in your q
 
 Controller is part of the MVC model. Controllers are functions to get the requested data from the model. 
 
+*Single Responsibility Principle*
+
+Each function should only do 1 thing. If you are passing in booleans to make the function do different things is a violation of the Single Responsibility Principle. You probably need to split it into several smaller functions with descriptive names, separating the code paths corresponding to the values of those booleans. 
+
 *Interface Segregation Principle*
 
 Do not force the class/function to implement unused things. 
@@ -573,6 +577,33 @@ Do not force the class/function to implement unused things.
 *Open-Closed Principle*
 
 If I have to open the JS file your module and make a modification in order to extend it, you’ve failed the open closed principle.
+
+*DRY - Don't Repeat Yourself*
+
+ If a piece of logic is repeated at least once, it is generally a good idea to place that code inside a function for reuse. E.g. Validation. Keeping duplications to a minimum allows us to better manage complexity.
+
+*Setting immediately on the first idea*
+
+One of the tendencies of beginning developers is to be ecstatic when they come up with a solution. That is not a bad thing. In programming, there are more than one ways to solve the problem. If you have a shallow understanding of the problem domain, it is only natural for you to be able to come up with shallow solutions. That is okay. What is not okay, however, is to settle for that shallow solution.
+
+*TODO is bad*
+
+I believe every developer is/has been guilty of leaving a comment that involves doing something LATER at one point in their career. Including myself. When you write comments like this, how many times has this TODO sat in the code base for more than a month, unattended?
+
+*Code Smells*
+
+Static analyzer or linter can help to prevent this.
+
+Code smells are not bugs or errors. Instead, these are absolute violations of the fundamentals of developing software that decrease the quality of code. Smelly code contributes to poor code quality and hence increasing the technical debt. 
+
+Some examples of code smells:
+1. Duplicate Code	- Similar code in more than one location
+2. Shotgun Surgery -	One change requires altering many different classes.  For example, you need to create a new user rule such as ‘Supper-Admin’ then you found yourself must edit some methods in Profile, Products and Employees classes. In that case, consider grouping these methods in one single class so this new class will have a single reason to change.
+3. Contrived Complexity -	Using complex design patterns where a simpler uncomplicated design could be used.
+4. Large Class/Long Methods -	Class trying to do too much and has too many instance variables.
+5. Feature Envy Code Smell - Sometimes you found a method in your class that extensively makes use of another class. 
+6. Comments Code Smell -Remove unnecessary comments. If the code is obvious, don’t write a comment. Don’t leave commented old code.
+
 
 *React/Redux*
 
