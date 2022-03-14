@@ -15,6 +15,29 @@
 # Explanation: The longest substring with no more than '1' distinct characters is "aa".
 
 
+#Solution 2
+def longest_substring_with_k_distinct(str1, k):
+  hashMap = {}
+  maxLength = start = 0
+  for end in range(len(str1)):
+    character = str1[end]
+    if character not in hashMap:
+      hashMap.update({character: 1}) # same as hashMap[charater] = 1
+    else:
+      hashMap[character] += 1
+
+    while len(hashMap) > k:
+      startChar = str1[start]
+      hashMap[startChar] -= 1
+      if hashMap[startChar] == 0:
+        del hashMap[startChar]
+      start += 1
+
+    maxLength = max(maxLength, end - start  + 1)
+  return maxLength
+
+
+
 #solution 1 
 def longest_substring_with_k_distinct(str1, k):
   char_counts = { str1[0]: 1 }
@@ -39,25 +62,4 @@ def longest_substring_with_k_distinct(str1, k):
 
   return max_len
 
-
-#Solution 2
-def longest_substring_with_k_distinct(str1, k):
-  hashMap = {}
-  maxLength = start = 0
-  for end in range(len(str1)):
-    character = str1[end]
-    if character not in hashMap:
-      hashMap.update({character: 1}) # same as hashMap[charater] = 1
-    else:
-      hashMap[character] += 1
-
-    while len(hashMap) > k:
-      startChar = str1[start]
-      hashMap[startChar] -= 1
-      if hashMap[startChar] == 0:
-        del hashMap[startChar]
-      start += 1
-
-    maxLength = max(maxLength, end - start  + 1)
-  return maxLength
 
