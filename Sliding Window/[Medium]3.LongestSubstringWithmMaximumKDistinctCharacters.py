@@ -20,12 +20,13 @@ def longest_substring_with_k_distinct(str1, k):
   hashMap = {}
   maxLength = start = 0
   for end in range(len(str1)):
-    character = str1[end]
+    character = str1[end] 
     if character not in hashMap:
       hashMap.update({character: 1}) # same as hashMap[charater] = 1
     else:
       hashMap[character] += 1
-
+    #Expand all the way until we have repeated character in the substring
+    #While our hashMap more than k, i will slowly slide my window in left
     while len(hashMap) > k:
       startChar = str1[start]
       hashMap[startChar] -= 1

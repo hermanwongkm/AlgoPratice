@@ -41,6 +41,7 @@ class Solution:
         
         #We can do this because we know that the maximum window length
         #for it to return true, HAS TO BE the length of the pattern
+        #>= because if it reaches here, but the same length, means it is not a match
             if rightIndex - leftIndex + 1 >= len(s1):
                 leftChar = s2[leftIndex]
                 if leftChar in hashMap:

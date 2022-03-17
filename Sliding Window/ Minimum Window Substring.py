@@ -47,7 +47,8 @@ class Solution:
                     subStringStart = leftIndex
                 leftChar = s[leftIndex]
                 if leftChar in hashMap:
-                    if hashMap[leftChar] == 0: # It means that we finally cross and removed a character in the pattern without anymore nearer duplicate
+# It means that we finally cross and removed a character in the pattern without anymore nearer duplicate
+                    if hashMap[leftChar] == 0: 
                         matched -= 1
                     hashMap[leftChar] += 1
                 leftIndex += 1

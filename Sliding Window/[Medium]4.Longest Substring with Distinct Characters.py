@@ -23,6 +23,10 @@ def non_repeat_substring(str1):
     if right_char in char_index_map:
       # this is tricky; in the current window, we will not have any 'right_char' after its previous index
       # and if 'window_start' is already ahead of the last index of 'right_char', we'll keep 'window_start'
+      #What happens here is that we want to shift the start, where we find the position 
+      #of the repeated character and go to the next index. 
+      #For example, abcdbea, b is repeated, so we get the index of b and increase by 1.
+      #The max function, is just so that incase we have a tighter substring.
       window_start = max(window_start, char_index_map[right_char] + 1)
     # insert the 'right_char' into the map
     char_index_map[right_char] = window_end
