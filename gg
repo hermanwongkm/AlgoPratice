@@ -67,3 +67,101 @@ class Solution {
     
     
 }
+
+
+# Write a chess engine
+
+BOARD_SIZE = 8
+
+class Piece:
+  def __init__(self, name, color):
+    self.color = color
+    self.name = name
+
+class Knight:
+  def __init__(self, name, color):
+    super(self).__init__(name, color)
+
+  def isValidMove(orig_row, orig_col, dest_row_col):
+    # calculate if move is valid
+    pass
+    
+class Pawn:
+  def __init__(self, name, color):
+    ...
+
+  def is_valid_move(orig_row, orig_col, dest_row, dest_col, color):
+    if orig_row != dest_row:
+        return False
+
+    if self._is_at_starting_position(orig_col):
+      if 
+    if (self._is_at_starting_position(orig_col) and
+        ((color == "white" and dest_col - orig_col != 2)
+        or (color == "black" and dest_col - orig_col != -2))
+        or (not _is_at_starting_position and
+           ((color == "white" and dest_col - orig_col != 1)
+          or (color == "black" and dest_col - orig_col != -1)
+        )):
+          return False
+
+    return True
+    
+    pass
+
+  def _is_at_starting_position(self, col):
+    return (self.color == "white" and col == 2) or (self.color == "black" and col = 7)
+
+
+KNIGHT = Piece("knight")
+
+def starting_board():
+  pass  
+
+TURNS = ["white", "black"]
+START_BOARD = starting_board()
+CURRENT_TURN = "white"
+
+def move(orig_row, orig_col, dest_row, dest_col):
+  if not START_BOARD[orig_row][orig_col]:
+    print("Piece does not exist")
+    input()
+  
+
+  piece = START_BOARD[orig_row][orig_col]
+  if START_BOARD[dest_row][dest_col].color == CURRENT_TURN or not piece.isValidMove(orig_row, orig_col, dest_row, dest_col, color):
+    print("Move is not valid")
+    input()
+
+  START_BOARD[dest_row][dest_col] = piece
+  START_BOARD[orig_row][orig_col] = None
+
+  CURRENT_TURN = (TURNS + 1) % len(TURNS)
+  
+#REVIEW
+
+class Piece:
+  ...
+
+class Pawn(Piece):
+  ...
+  
+class GameState:
+  current_turn
+  board_state # 2d matrix
+
+position = NamedTuple(row, col)
+class Action:
+  start_position
+  end_position
+  
+def move(game_state, action):
+  piece = board.get(action.start_position)
+  if piece.is_invalid_move(game_state.color, action.start_position, action.end_position):
+    raise Exception("Invalid move")
+  else:
+    new_game_state = move_piece(game_state, action)
+  return new_game_state
+
+def move_piece(game_state, action):
+  
