@@ -10,6 +10,30 @@
 
 # This problem follows the Sliding Window pattern, and we can use a similar dynamic sliding window strategy as discussed in Longest Substring with K Distinct Characters. We can use a HashMap to remember the last index of each character we have processed. Whenever we get a duplicate character, we will shrink our sliding window to ensure that we always have distinct characters in the sliding window.
 
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        slowPointer = 0
+        fastPointer = 0
+        longestSoFar = 0
+        hashMap = {}
+
+        while fastPointer < len(s):
+            if s[fastPointer] not in hashMap:
+                hashMap[s[fastPointer]] = fastPointer
+                longestSoFar = max(longestSoFar, fastPointer - slowPointer + 1)
+                fastPointer += 1
+
+            else:
+                # Why +1? because if you are taking the right side, the index of the char, we need to move
+                # 1 index away from where it is currently situated at.
+                slowPointer = max(slowPointer, hashMap[s[fastPointer]] + 1)
+                longestSoFar = max(longestSoFar, fastPointer - slowPointer + 1)
+                hashMap[s[fastPointer]] = fastPointer
+                fastPointer += 1
+
+        return longestSoFar
+    # Then if we simplify the top and bottom if else. You will get back the same result
+
 def non_repeat_substring(str1):
   window_start = 0
   max_length = 0
